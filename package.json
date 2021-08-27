@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "scripts": {
+        "dev:frontend": "cd frontend && npm next dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jeraldlyh/Ellipsis-Techseries-2021.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jeraldlyh/Ellipsis-Techseries-2021/issues"
+    },
+    "homepage": "https://github.com/jeraldlyh/Ellipsis-Techseries-2021#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
