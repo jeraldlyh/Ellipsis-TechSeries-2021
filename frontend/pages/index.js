@@ -36,7 +36,7 @@ export default function Home() {
             <div className="pl-40 font-semibold text-5xl text-red-700 mb-8">
               What we offer
             </div>
-            <div className="pl-40 font-light text-xl text-gray-700 mb-2">
+            <div className="italic pl-40 font-light text-xl text-gray-700 mb-2">
               ChequeMate provide financial inclusion to SMEs by creating a platform facilitating Business to Business (B2B) BNPL scheme. We offers a safer alternative to taking high interest loans from banks, allowing you to procure goods from suppliers at no or low interest repayment instalments.
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function Home() {
             <div className="pl-10 pr-40 font-semibold text-5xl text-red-700 mb-8">
               Buy Now <br />Pay Later Scheme
             </div>
-            <div className="pl-10 pr-40 font-light text-xl text-gray-700 mb-2">
+            <div className="italic pl-10 pr-40 font-light text-xl text-gray-700 mb-2">
               BNPL services enable consumers to buy items now and spread their purchases over short instalment periods, with little to no interest.
             </div>
           </div>
