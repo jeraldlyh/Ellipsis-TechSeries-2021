@@ -1,7 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "dev:frontend": "cd frontend && npm next dev"
+        "dev:frontend": "cd frontend && npm run dev",
+        "dev:backend": "cd backend && npm run dev"
     },
     "repository": {
         "type": "git",
