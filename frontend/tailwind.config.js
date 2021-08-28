@@ -5,7 +5,7 @@ module.exports = {
     theme: {
         extend: {
           fontFamily: {
-            sans: ["Alatsi"]
+            serif: ["Alatsi"]
           }
         },
     },
