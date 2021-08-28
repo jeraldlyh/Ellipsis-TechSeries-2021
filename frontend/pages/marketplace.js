@@ -13,15 +13,15 @@ const marketplace = () => {
         name: "Sort By..."
     })
 
-    const [products, setProducts] = useState([])
-    const getProducts = async () => {
-        const response = await axiosInstance.get("/api/product")
-        setProducts(response.data.products)
-    }
+    // const [products, setProducts] = useState([])
+    // const getProducts = async () => {
+    //     const response = await axiosInstance.get("/api/product")
+    //     setProducts(response.data.products)
+    // }
 
-    useEffect(() => {
-        getProducts()
-    }, [])
+    // useEffect(() => {
+    //     getProducts()
+    // }, [])
     const data = [
         {
             id: 1,
@@ -29,15 +29,15 @@ const marketplace = () => {
         },
         {
             id: 2,
-            name: "Poo"
+            name: "Name"
         },
         {
             id: 3,
-            name: "Peepee"
+            name: "Date Added"
         },
         {
             id: 4,
-            name: "Monkey"
+            name: "Sales"
         }
     ]
 
@@ -49,7 +49,7 @@ const marketplace = () => {
                 <div className="text-red-700 font-semibold text-6xl text-center w-full tracking-widest pb-1 ">
                     MARKETPLACE
                 </div>
-                <div className="text-grey-700 text-sm text-center w-full tracking-wide">
+                <div className="italic mt-2 text-grey-700 text-sm text-center w-full tracking-wide">
                     "why pay now when you can pay later"
                 </div>
             </div>
@@ -62,21 +62,21 @@ const marketplace = () => {
 
             <div className="flex justify-between pb-7 pt-8 pl-32 pr-32">
                 <div className="text-xl font-semibold">Featured</div>
-                <div>
+                <div className="bg-white flex rounded-lg items-center">
                     <SortDropdown data={data} selected={category} setSelected={setCategory} />
                 </div>
 
             </div>
 
             <div className="grid gap-y-16 grid-cols-4 justify-items-center p-0.5 pl-20 pr-20 pb-30">
-                {
+                {/* {
                     products && products.length !== 0
                     ? products.map(product => {
-                        return <ProductItem key={product.id} name={product.name} image={product.image} company="123" price={product.price} />
+                        return <ProductItem key={product.id} id={product.id} name={product.name} image={product.image} company="123" price={product.price} />
                     })
                     : null
-                }
-                {/* <ProductItem id={1} image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price="S$ 10"
+                } */}
+                <ProductItem id={1} image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price="S$ 10"
                     desc="At PonHockSG, we provide the best flour you can find in Singapore, in terms of product quality, rice texture and product sustainability."
                     bnpl="monthly payment across 12 months" />
                 <ProductItem id={2} image="/photos/marketplace/cups.jpeg" name="Ceramic Cups" company="Cupping" price="S$ 10" desc="Simple and minimalistic cup with a modern design. Whether dressing your table up or down, the simple, functional design is easy to coordinate with other shapes and colours." />
@@ -85,7 +85,7 @@ const marketplace = () => {
                 <ProductItem id={5} image="/photos/marketplace/handbag.jpeg" name="Estla hand bag" company="BigBagCompany" price="S$ 30" desc="An extremely functional bag to cater to all your needs. It is spacious enough for all your daily necessity, all while remaining fashionable." />
                 <ProductItem id={6} image="/photos/marketplace/totebag.jpeg" name="Cowhide hand bag" company="ECCOwide" price="S$ 45" desc="For seekers of special textures, our unique cowhide hand bags for offer a different experience" />
                 <ProductItem id={7} image="/photos/marketplace/bottle.jpeg" name="Memobottle" company="Bottles and bottles" price="$ 20" desc="This is a good bottle, in fact the best bottle" />
-                <ProductItem id={8} image="/photos/marketplace/flask.jpeg" name="Vase" company="Plotting pots" price="S$ 15" desc="Sturdy and high quality housing of indoor or outdoor plant decors" /> */}
+                <ProductItem id={8} image="/photos/marketplace/flask.jpeg" name="Vase" company="Plotting pots" price="S$ 15" desc="Sturdy and high quality housing of indoor or outdoor plant decors" />
             </div>
             <div className="pt-32"></div>
         </div>

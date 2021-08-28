@@ -11,12 +11,12 @@ const Product = () => {
     return (
         <div className={styles.background}>
             <Navbar></Navbar>
-            <div className="flex cursor-pointer justify-center pt-32">
-                <div class="ml-64" onClick={() => router.back()}>
-                    <AiOutlineArrowLeft />
+            <div className="flex justify-center pt-32">
+                <div class="ml-64" >
+                    <AiOutlineArrowLeft className="cursor-pointer w-6 h-6" onClick={() => router.back()}/>
                 </div>
 
-                <img class="ml-10 flex justify-end" src={image} width="330" height="445" />
+                <img class="ml-10 flex justify-end object-cover" src={image} width="330" height="445" />
 
                 <div className="pb-5 p-20 pr-20">
                     <div className={styles.companyName2}>{company}</div>
