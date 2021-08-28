@@ -4,7 +4,7 @@ export default function Navbar() {
   const router = useRouter()
 
   return (
-    <div className="top-0 sticky font-semibold flex bg-white items-center justify-between px-10 h-12">
+    <div className="z-50 top-0 sticky font-semibold flex bg-white items-center justify-between px-10 h-14">
       <div className="tracking-widest cursor-pointer" onClick={() => router.push("/")}>
         CHEQUEMATE
       </div>
