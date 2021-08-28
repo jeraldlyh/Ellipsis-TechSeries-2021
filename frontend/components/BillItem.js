@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OrderItem = () => {
+const BillItem = () => {
   return (
     <div className="grid grid-cols-9 text-gray-900 text-sm gap-y-2 pt-4 text-center border-b-2 pb-4 items-center">
       <div className="col-span-3 flex items-center">
@@ -17,4 +17,4 @@ const OrderItem = () => {
   )
 }
 
-export default OrderItem
+export default BillItem
