@@ -57,14 +57,14 @@ const marketplace = () => {
       </div>
 
       <div className="grid gap-y-16 grid-cols-4 justify-items-center p-0.5 pl-20 pr-20 pb-30">
-        <ProductItem id={1} image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price="S$ 10 / 100kg" />
-        <ProductItem id={2} image="/photos/marketplace/cups.jpeg" name="Ceramic Cups" company="Cupping" price="S$ 10 / pc" />
-        <ProductItem id={3} image="/photos/marketplace/chair.jpeg" name="Modern Office Chair" company="ChairMan" price="S$ 250 / pc" />
-        <ProductItem id={4} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45 / pc" />
-        <ProductItem id={5} image="/photos/marketplace/handbag.jpeg" name="Estla hand bag" company="BigBagCompany" price="S$ 30 / pc" />
-        <ProductItem id={6} image="/photos/marketplace/totebag.jpeg" name="Cowhide hand bag" company="ECCOwide" price="S$ 45 / pc" />
-        <ProductItem id={7} image="/photos/marketplace/bottle.jpeg" name="Memobottle" company="Bottles and bottles" price="$ 20 / pc" />
-        <ProductItem id={8} image="/photos/marketplace/flask.jpeg" name="Vase" company="Plotting pots" price="S$ 15 / pc" />
+        <ProductItem id={1} image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price="S$ 10" />
+        <ProductItem id={2} image="/photos/marketplace/cups.jpeg" name="Ceramic Cups" company="Cupping" price="S$ 10" />
+        <ProductItem id={3} image="/photos/marketplace/chair.jpeg" name="Modern Office Chair" company="ChairMan" price="S$ 250" />
+        <ProductItem id={4} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45" />
+        <ProductItem id={5} image="/photos/marketplace/handbag.jpeg" name="Estla hand bag" company="BigBagCompany" price="S$ 30" />
+        <ProductItem id={6} image="/photos/marketplace/totebag.jpeg" name="Cowhide hand bag" company="ECCOwide" price="S$ 45" />
+        <ProductItem id={7} image="/photos/marketplace/bottle.jpeg" name="Memobottle" company="Bottles and bottles" price="$ 20" />
+        <ProductItem id={8} image="/photos/marketplace/flask.jpeg" name="Vase" company="Plotting pots" price="S$ 15" />
       </div>
       <div className="pt-32"></div>
     </div>
