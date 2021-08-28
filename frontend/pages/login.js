@@ -1,7 +1,7 @@
 import NavBar from "../components/Navbar"
 import { useRouter } from "next/router"
 
-export default function login() {
+export default function Login() {
   const router = useRouter()
 
   return (
@@ -10,9 +10,9 @@ export default function login() {
 
       <div className="h-full overflow-hidden w-full flex items-center justify-center bg-gray-100">
         <div
-          className="-mt-20 rounded-lg shadow-md text-center bg-white justify-between items-center py-10 px-16 flex flex-row"
+          className="-mt-20 rounded-lg shadow-md text-center bg-white justify-between items-center py-14 px-20 flex flex-row"
         >
-          <div className="items-start flex flex-col mr-12">
+          <div className="items-start flex flex-col mr-16">
             <div className="text-red-700 font-semibold text-2xl tracking-wider mb-1">
               LOGIN
             </div>
@@ -47,12 +47,12 @@ export default function login() {
               >
                 Sign in
               </div>
-              <div className="mt-5 text-gray-600 text-xs cursor-pointer">
+              <div className="mt-5 text-gray-600 text-xs cursor-pointer hover:text-black" onClick={() => router.push("/register")}>
                 No account yet? Sign up here!
               </div>
             </div>
           </div>
-          <img src="/createAccIcon.jpg" style={{ width: 340, height: 343 }} />
+          <img src="/auth/login.jpg" style={{ width: 340, height: 343 }} />
 
         </div>
       </div>

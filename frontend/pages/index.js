@@ -18,7 +18,7 @@ export default function Home() {
               BNPL
             </div>
             <div className="border-b-8 border-red-700" />
-            <div className="py-2 px-5 w-32 mt-10 tracking-wider bg-black rounded-md text-white text-center text-xs cursor-pointer hover:bg-gray-700" onClick={() => router.push("/")}>Register now</div>
+            <div className="py-2 px-5 w-32 mt-10 tracking-wider bg-black rounded-md text-white text-center text-xs cursor-pointer hover:bg-gray-700" onClick={() => router.push("/register")}>Register now</div>
           </div>
           <img src="/landing/building.png" className="pt-10 pb-24 h-screen" />
         </div>
