@@ -4,6 +4,9 @@ module.exports = {
     darkMode: false, // or "media" or "class"
     theme: {
         extend: {
+          fontSize: {
+            'xxs': '.3rem'
+          },
           fontFamily: {
             serif: ["Alatsi"]
           }
