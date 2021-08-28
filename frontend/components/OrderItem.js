@@ -10,8 +10,8 @@ const OrderItem = () => {
       <div className="col-span-2">Daily Slip</div>
       <div className="col-span-2">10</div>
       <div className="col-span-2 flex items-center">
-        <div className="rounded-full bg-gray-500 hover:bg-gray-600 text-white text-xs flex items-center px-3 py-1 cursor-pointer mr-2">ACCEPT</div>
-        <div className="rounded-full border text-xs flex items-center px-3 py-1 cursor-pointer mr-2">REJECT</div>
+        <div className="rounded-full bg-gray-500 hover:bg-gray-600 text-white text-xs flex items-center px-2 py-1 cursor-pointer mr-2">ACCEPT</div>
+        <div className="rounded-full border text-xs flex items-center px-2 py-1 cursor-pointer mr-2">REJECT</div>
       </div>
     </div>
   )
