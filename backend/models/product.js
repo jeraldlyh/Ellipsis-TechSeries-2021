@@ -19,6 +19,10 @@ const Product = db.define(
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        image: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
+        },
         price: {
             type: DataTypes.INTEGER,
             allowNull: false,

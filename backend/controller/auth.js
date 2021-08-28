@@ -28,12 +28,13 @@ module.exports = {
         }
     },
     createUser: async function (req, res) {
-        const { name, password, UEN, address, } = req.body
+        const { name, password, UEN, address, email } = req.body
         await Models.Company.create({
             name: name,
             password: password,
             UEN: UEN,
             address: address,
+            email: email,
         })
         res.status(200).end()
     },

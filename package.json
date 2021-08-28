@@ -13,8 +13,5 @@
     "bugs": {
         "url": "https://github.com/jeraldlyh/Ellipsis-Techseries-2021/issues"
     },
-    "homepage": "https://github.com/jeraldlyh/Ellipsis-Techseries-2021#readme",
-    "dependencies": {
-        "express": "^4.17.1"
-    }
+    "homepage": "https://github.com/jeraldlyh/Ellipsis-Techseries-2021#readme"
 }
