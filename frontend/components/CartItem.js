@@ -7,7 +7,7 @@ export default function CartItem() {
             <div className="pl-16 mt-4 flex-row flex justify-between">
                 <div className="flex-row flex h-36">
                     <img src="/flour.jpg" className="w-36" />
-                    <div className="justify-center flex-col flex ml-10">
+                    <div className="justify-center flex-col flex ml-20">
                         <span>Premium Flour</span>
                         <span>S$ 10 / 100kg</span>
                         <span>PonHockSG</span>
