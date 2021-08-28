@@ -37,7 +37,7 @@ export default function Home() {
               What we offer
             </div>
             <div className="italic pl-40 font-light text-xl text-gray-700 mb-2">
-              ChequeMate provide financial inclusion to SMEs by creating a platform facilitating Business to Business (B2B) BNPL scheme. We offers a safer alternative to taking high interest loans from banks, allowing you to procure goods from suppliers at no or low interest repayment instalments.
+              ChequeMate provides financial inclusion to SMEs by creating a platform facilitating Business to Business (B2B) BNPL schemes. We offer a safer alternative to taking high interest loans from banks, allowing you to procure goods from suppliers at no or low interest repayment instalments.
             </div>
           </div>
           <div className="w-3/5">
