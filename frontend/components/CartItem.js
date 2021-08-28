@@ -1,5 +1,5 @@
 import { Divider } from "@material-ui/core";
-import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
+import { AiOutlinePlus} from "react-icons/ai";
 
 export default function CartItem() {
     return (
