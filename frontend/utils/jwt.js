@@ -29,8 +29,8 @@ export const getExpiryTime = (token) => {
 export const refreshToken = async (refreshToken) => {
     try {
         const response = await axiosInstance.post("/api/auth/token/refresh/", { refresh: refreshToken })
-        const { access } = response.data
-        return [access]
+        const { access_token } = response.data
+        return [access_token]
     } catch (error) {
         return [null, null]
     }

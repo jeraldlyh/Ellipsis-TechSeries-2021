@@ -72,7 +72,7 @@ module.exports = {
                 return res.sendStatus(403)
             }
             const token = module.exports.generateAccessToken(user.id)
-            return res.status(200).json({ "refresh_token": token })
+            return res.status(200).json({ "access_token": token })
         })
     },
     logoutUser: function (req, res) {
