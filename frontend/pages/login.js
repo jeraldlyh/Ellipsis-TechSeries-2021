@@ -1,8 +1,12 @@
-import logo from '../public/createAccIcon.jpg'
+import NavBar from "../components/Navbar"
 
 export default function login() {
     return (
-        <div className="h-screen w-full flex items-center justify-center bg-red-50">
+        <div>
+        <NavBar/>
+        
+        <div className="h-screen overflow-hidden w-full flex items-center justify-center bg-red-50">
+            
             <div
                 style={{ width: 725, height: 456 }}
                 className="rounded-lg text-center bg-white justify-between items-center px-10 flex flex-row"
@@ -69,6 +73,7 @@ export default function login() {
             <img src = "/createAccIcon.jpg" style = {{width:340,height:343}}/>
 
             </div>
+        </div>
         </div>
     );
 }
