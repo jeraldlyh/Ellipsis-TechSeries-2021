@@ -1,0 +1,10 @@
+.background {
+    background-color: #F4F4F4;
+    background-repeat: repeat-y;
+}
+
+.header1container {
+    margin: auto;
+    padding: 10px;
+    max-width: 50%;
+}

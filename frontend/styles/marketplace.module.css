@@ -42,7 +42,7 @@
     /* font-family: 'Abhaya Libre', serif; */
     font-family: 'Alatsi', serif;
     font-size: 1rem;
-    color: #424242;
+    color: #606060;
     text-align: left;
 }
 
@@ -57,7 +57,7 @@
 .price2 {
     /* font-family: 'Abhaya Libre', serif; */
     font-family: 'Alatsi', serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #424242;
     text-align: left;
     font-weight: 500;
@@ -67,10 +67,19 @@
     /* font-family: 'Abhaya Libre', serif; */
     font-family: 'Alatsi', serif;
     font-size: 1rem;
-    color: #424242;
+    color: #606060;
     text-align: left;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.bnpl {
+    /* font-family: 'Abhaya Libre', serif; */
+    font-family: 'Alatsi', serif;
+    font-size: 1rem;
+    color: #D02626;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 

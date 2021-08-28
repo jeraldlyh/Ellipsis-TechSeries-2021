@@ -6,7 +6,7 @@ import _ from "lodash"
 import { signOut } from "next-auth/client"
 
 
-const PERMITTED_URLS = ["/login", "/register"]
+const PERMITTED_URLS = ["/login", "/register", "/marketplace", "/listings", "/product/*"]
 
 export const withAuth = () => {
     return function (Component) {
