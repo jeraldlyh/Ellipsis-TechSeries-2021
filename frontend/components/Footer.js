@@ -7,19 +7,19 @@ export default function Footer() {
     <div className="justify-center">
       <div className="flex justify-center">
         <div className="mb-8 w-1/2 items-center flex text-xs text-red-700 justify-between">
-          <div className="font-semibold">
+          <div className="cursor-pointer font-semibold">
             Product
           </div>
-          <div className="font-semibold">
+          <div className="cursor-pointer font-semibold">
             Features
           </div>
-          <div className="text-base font-semibold">
+          <div className="cursor-pointer text-base font-semibold" onClick={() => router.push("/")}>
             CHEQUEMATE
           </div>
-          <div className="font-semibold">
+          <div className="cursor-pointer font-semibold">
             About
           </div>
-          <div className="font-semibold">
+          <div className="cursor-pointer font-semibold">
             Support
           </div>
         </div>

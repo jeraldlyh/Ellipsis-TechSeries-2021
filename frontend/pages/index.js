@@ -1,7 +1,10 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import { useRouter } from "next/router"
 
 export default function Home() {
+  const router = useRouter()
+
   return (
     <div className="flex flex-col min-h-screen py-2">
       <Navbar />
@@ -24,7 +27,7 @@ export default function Home() {
             We help <span className="text-red-700">small businesses</span> access <span className="text-red-700">Buy Now Pay Later (BNPL)</span> schemes with the aim of <span className="text-red-700">financial inclusion</span> in mind
           </div>
         </div>
-        <div className="mt-8 mb-20 text-red-700 font-light text-center text-xxs">
+        <div className="mt-8 mb-32 text-red-700 font-light text-center text-xxs">
           - CHEQUEMATE
         </div>
 
