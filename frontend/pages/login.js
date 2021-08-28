@@ -20,7 +20,7 @@ export default function Login() {
               style={{ fontSize: 13 }}
               className="mb-7"
             >
-              Start your BNPL journey now!
+              Sign in to continue your BNPL journey
             </div>
             <input
               className="mb-2 px-5 border"
