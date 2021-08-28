@@ -3,11 +3,9 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar.js'
 import { GiMagnifyingGlass } from "react-icons/gi"
 import SortDropdown from '../components/SortDropdown'
-import router from 'next/router'
+import ProductItem from '../components/ProductItem'
 
 const marketplace = () => {
-  const [isModalVisible, setIsModalVisible] = useState(true);
-
   const [category, setCategory] = useState({
     id: 1,
     name: "Sort By..."
@@ -59,62 +57,14 @@ const marketplace = () => {
       </div>
 
       <div className="grid gap-y-16 grid-cols-4 justify-items-center p-0.5 pl-20 pr-20 pb-30">
-        <div className="cursor-pointer" onClick={() => { router.push("/product/" + 'name')}}>
-          <img className="pb-5" src="/photos/marketplace/flour.jpeg" width="240" height="330" />
-          <div className={styles.productName}>Premium Flour</div>
-          <div className={styles.companyName}>PonHockSG</div>
-          <div className={styles.price}>S$ 10 / 100kg</div>
-        </div>
-
-        <div>
-          <img className="pb-5" src="/photos/marketplace/cups.jpeg" width="240" height="330" />
-          <div className={styles.productName}>Ceramic Cups</div>
-          <div className={styles.companyName}>Cupping</div>
-          <div className={styles.price}>S$ 10 / pc</div>
-        </div>
-
-        <div>
-          <img className="pb-5" src="/photos/marketplace/chair.jpeg" width="240" height="330" />
-          <div className={styles.productName}>Modern Office Chair</div>
-          <div className={styles.companyName}>ChairMan</div>
-          <div className={styles.price}>S$ 250 / pc</div>
-        </div>
-
-        <div>
-          <img className="pb-5" src="/photos/marketplace/backpack.jpeg" width="240" height="330" />
-          <div className={styles.productName}>Everyday Bag</div>
-          <div className={styles.companyName}>BigBagCompany</div>
-          <div className={styles.price}>S$ 45 / pc</div>
-        </div>
-
-        <div>
-          <img className="pb-5" src="/photos/marketplace/handbag.jpeg" width="240" height="330" />
-          <div className={styles.productName}>Estla hand bag</div>
-          <div className={styles.companyName}>BigBagCompany</div>
-          <div className={styles.price}>S$ 30 / pc</div>
-        </div>
-
-        <div>
-          <img className="pb-5" src="/photos/marketplace/totebag.jpeg" width="240" height="330" />
-          <div className={styles.productName}>Cowhide hand bag</div>
-          <div className={styles.companyName}>ECCOwide</div>
-          <div className={styles.price}>S$ 45 / pc</div>
-        </div>
-
-        <div>
-          <img className="pb-5" src="/photos/marketplace/bottle.jpeg" width="240" height="330" />
-          <div className={styles.productName}>Memobottle</div>
-          <div className={styles.companyName}>Bottles and bottles</div>
-          <div className={styles.price}>S$ 20 / pc</div>
-        </div>
-
-        <div>
-          <img className="pb-5" src="/photos/marketplace/flask.jpeg" width="240" height="330" />
-          <div className={styles.productName}>Vase</div>
-          <div className={styles.companyName}>Plotting pots</div>
-          <div className={styles.price}>S$ 15 / pc</div>
-        </div>
-
+        <ProductItem id={1} image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price="S$ 10 / 100kg" />
+        <ProductItem id={2} image="/photos/marketplace/cups.jpeg" name="Ceramic Cups" company="Cupping" price="S$ 10 / pc" />
+        <ProductItem id={3} image="/photos/marketplace/chair.jpeg" name="Modern Office Chair" company="ChairMan" price="S$ 250 / pc" />
+        <ProductItem id={4} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45 / pc" />
+        <ProductItem id={5} image="/photos/marketplace/handbag.jpeg" name="Estla hand bag" company="BigBagCompany" price="S$ 30 / pc" />
+        <ProductItem id={6} image="/photos/marketplace/totebag.jpeg" name="Cowhide hand bag" company="ECCOwide" price="S$ 45 / pc" />
+        <ProductItem id={7} image="/photos/marketplace/bottle.jpeg" name="Memobottle" company="Bottles and bottles" price="$ 20 / pc" />
+        <ProductItem id={8} image="/photos/marketplace/flask.jpeg" name="Vase" company="Plotting pots" price="S$ 15 / pc" />
       </div>
       <div className="pt-32"></div>
     </div>
