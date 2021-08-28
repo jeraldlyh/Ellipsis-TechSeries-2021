@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import Navbar from '../../components/Navbar.js'
 import styles from '../../styles/marketplace.module.css'
-import { AiOutlineArrowLeft } from "react-icons/ai"
+// import { AiOutlineArrowLeft } from "react-icons/ai"
 
 const Listing = () => {
     const router = useRouter();
@@ -21,7 +21,7 @@ const Listing = () => {
                     <div className={styles.productName2}>{name}</div>
                     <div className={styles.price2}>{price}</div>
                     <div className={styles.detail}>{desc}</div>
-                    <div className={styles.bnpl2}>BNPL Scheme: {bnpl}</div>
+                    <div className={styles.bnpl}>BNPL Scheme: {bnpl}</div>
                     <div className={styles.price2}>Quantity: </div>
                 </div>
             </div>
