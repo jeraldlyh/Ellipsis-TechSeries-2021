@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
           - CHEQUEMATE
         </div>
 
-        <div className=" flex w-full absolute z-30 mt-12">
+        <div className="flex w-full absolute z-30 mt-12">
           <div className="w-3/5 mt-60">
             <div className="pl-40 font-semibold text-5xl text-red-700 mb-8">
               What we offer
@@ -45,10 +46,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img src="/landing/background.png" classNAme="absolute h-screen z-10" />
+        <img src="/landing/background.png" className="mb-32" />
 
-
-
+        <Footer />
       </div>
     </div>
   )
