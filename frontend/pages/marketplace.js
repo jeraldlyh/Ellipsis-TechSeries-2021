@@ -50,7 +50,7 @@ const marketplace = () => {
                     MARKETPLACE
                 </div>
                 <div className="italic mt-2 text-grey-700 text-sm text-center w-full tracking-wide">
-                    "why pay now when you can pay later"
+                    "Why pay now when you can pay later"
                 </div>
             </div>
             <div className="mx-96 bg-white flex items-center rounded-full shadow-lg px-3 space-x-3 py-2 my-10">
@@ -78,7 +78,7 @@ const marketplace = () => {
                 } */}
                 <ProductItem id={1} image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price="S$ 10"
                     desc="At PonHockSG, we provide the best flour you can find in Singapore, in terms of product quality, rice texture and product sustainability."
-                    bnpl="monthly payment across 12 months" />
+                    bnpl="Monthly payment across 12 months" />
                 <ProductItem id={2} image="/photos/marketplace/cups.jpeg" name="Ceramic Cups" company="Cupping" price="S$ 10" desc="Simple and minimalistic cup with a modern design. Whether dressing your table up or down, the simple, functional design is easy to coordinate with other shapes and colours." />
                 <ProductItem id={3} image="/photos/marketplace/chair.jpeg" name="Modern Office Chair" company="ChairMan" price="S$ 250" desc="At ChairMan, we believe that there is a perfect chair for everyone. This classic black chair is suitable for offices, homes and even cafes." />
                 <ProductItem id={4} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45" desc="Everyday Bag to serve your everyday needs, now comes very nicely in new colour." />

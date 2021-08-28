@@ -82,6 +82,14 @@
     margin-bottom: 10px;
 }
 
+.bnpl2 {
+    /* font-family: 'Abhaya Libre', serif; */
+    font-family: 'Alatsi', serif;
+    font-size: 1rem;
+    color: #D02626;
+    text-align: center;
+}
+
 
 .background {
     background-color: #F4F4F4;

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import Navbar from '../../components/Navbar.js'
 import styles from '../../styles/marketplace.module.css'
-import { AiOutlineArrowLeft } from "react-icons/ai"
+// import { AiOutlineArrowLeft } from "react-icons/ai"
 
 const Listing = () => {
     const router = useRouter();
