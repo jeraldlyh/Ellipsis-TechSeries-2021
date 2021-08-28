@@ -6,6 +6,7 @@ module.exports = {
         extend: {
           fontFamily: {
             serif: ["Alatsi"]
+            // serif: ["Abhaya Libre"]
           }
         },
     },
