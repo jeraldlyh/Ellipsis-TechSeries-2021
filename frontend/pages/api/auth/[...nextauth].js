@@ -15,7 +15,7 @@ const settings = {
         Providers.Credentials({
             async authorize(credentials, request) {
                 const response = await axiosInstance.post("/api/auth/login/", {
-                    username: credentials.username,
+                    email: credentials.email,
                     password: credentials.password
                 })
 
@@ -30,7 +30,7 @@ const settings = {
         async session(session, token) {
             session.accessToken = token.accessToken
             session.refreshToken = token.refreshToken
-            session.user = token.userProfile
+            session.uen = token.uen
             if (token.error) {
                 session.error = token.error
             }
@@ -41,29 +41,14 @@ const settings = {
         },
         async jwt(token, user, account, profile, isNewUser) {
             if (user) {
-                if (account.provider === "google") {
-                    const { accessToken, idToken } = account
-
-                    try {
-                        const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/social/google/`, { access_token: accessToken, id_token: idToken })
-                        const { access_token, refresh_token } = response.data
-                        token = {
-                            ...token,
-                            accessToken: access_token,
-                            refreshToken: refresh_token
-                        }
-                        return token
-                    } catch (error) {
-                        return null
-                    }
-                } else if (account.type === "credentials") {
-                    const { access_token, refresh_token, user: user_profile } = user
+                if (account.type === "credentials") {
+                    const { access_token, refresh_token, uen } = user
 
                     token = {
                         ...token,
                         accessToken: access_token,
                         refreshToken: refresh_token,
-                        userProfile: user_profile
+                        uen: uen
                     }
                     return token
                 }

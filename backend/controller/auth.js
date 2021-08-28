@@ -7,19 +7,19 @@ const refreshTokens = {}
 
 module.exports = {
     loginUser: async function (req, res) {
-        const { uen, password } = req.body
+        const { email, password } = req.body
         const response = await Models.Company.findOne({
             where: {
-                uen: uen,
+                email: email,
                 password: password,
             }
         })
         if (response) {
-            const token = module.exports.generateAccessToken(uen)
+            const token = module.exports.generateAccessToken(email)
             const tokenResponse = {
-                access: token,
-                refresh: token,
-                uen: uen,
+                access_token: token,
+                refresh_token: token,
+                email: email,
             }
             res.status(200).json(tokenResponse)
             _.extend(refreshTokens, tokenResponse)

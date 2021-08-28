@@ -2,6 +2,8 @@ import { useState } from "react"
 import NavBar from "../components/Navbar"
 import { useRouter } from "next/router"
 import axiosInstance from "../axios/axiosInstance"
+import { signIn } from "next-auth/client"
+
 
 export default function Register() {
     const router = useRouter()
@@ -12,14 +14,15 @@ export default function Register() {
     const [password, setPassword] = useState("")
 
     const registerAccount = async () => {
-        const response = await axiosInstance.post("/api/auth/register", {
+        await axiosInstance.post("/api/auth/register", {
             name: name,
             UEN: UEN,
             address: address,
             password: password,
             email: email,
         })
-        console.log(response)
+        const callbackUrl = process.env.NEXTAUTH_URL || "http://127.0.0.1:3000/"
+        await signIn("credentials", { email: email, password: password, callbackUrl: callbackUrl })
     }
 
     return (
@@ -45,21 +48,21 @@ export default function Register() {
                             placeholder="UEN"
                             value={UEN}
                             onChange={e => setUEN(e.target.value)}
-                            />
+                        />
                         <input
                             className="mb-2 px-5 border"
                             style={{ width: 500, height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
                             placeholder="Name"
                             value={name}
                             onChange={e => setName(e.target.value)}
-                            />
+                        />
                         <input
                             className="mb-2 px-5 border"
                             style={{ width: 500, height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
                             placeholder="Address"
                             value={address}
                             onChange={e => setAddress(e.target.value)}
-                            />
+                        />
                         <input
                             className="mb-2 px-5 border"
                             style={{ width: 500, height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
@@ -67,7 +70,7 @@ export default function Register() {
                             type="email"
                             value={email}
                             onChange={e => setEmail(e.target.value)}
-                            />
+                        />
                         <input
                             className="mb-8 px-5 border"
                             style={{ width: 500, height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
