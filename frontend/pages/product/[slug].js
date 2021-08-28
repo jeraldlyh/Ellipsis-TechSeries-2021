@@ -49,7 +49,7 @@ const Product = () => {
                         </div>
                     </div>
 
-                    <div className = "w-40 h-10 mt-5 rounded border text-center  justify-center flex-col flex" style = {{backgroundColor:"#3A3A3A"}}>
+                    <div className = "w-40 h-10 mt-5 rounded border text-center justify-center flex-col flex bg-black hover:bg-gray-700 cursor-pointer">
                         <span className = "text-white">ADD TO BAG</span>
                     </div>
                 </div>
