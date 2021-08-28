@@ -1,6 +1,9 @@
 import NavBar from "../components/Navbar"
+import { useRouter } from "next/router"
 
 export default function login() {
+  const router = useRouter()
+
   return (
     <div className="h-screen overflow-hidden">
       <NavBar />
@@ -31,16 +34,21 @@ export default function login() {
               placeholder="Password"
               type="password"
             />
-            <div className="flex flex-row" style={{ width: 250, height: 40}}>
+            <div>
               <div
                 style={{
                   borderWidth: 1,
                   borderRadius: 10,
-                  color: 'white'
+                  color: 'white',
+                  width: 250, 
+                  height: 40
                 }}
                 className="w-full items-center flex justify-center bg-red-600 hover:bg-red-700 cursor-pointer"
               >
                 Sign in
+              </div>
+              <div className="mt-5 text-gray-600 text-xs cursor-pointer">
+                No account yet? Sign up here!
               </div>
             </div>
           </div>
