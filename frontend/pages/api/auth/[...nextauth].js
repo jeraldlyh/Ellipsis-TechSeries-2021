@@ -1,8 +1,8 @@
 import NextAuth from "next-auth"
 import Providers from "next-auth/providers"
-import axios from "axios"
 import axiosInstance from "../../../axios/axiosInstance"
 import { isAccessTokenExpired, refreshToken } from "../../../utils/jwt"
+
 
 const settings = {
     debug: process.env.NODE_ENV === "development",

@@ -25,6 +25,10 @@ const Company = db.define(
         address: {
             type: DataTypes.STRING(100),
             allowNull: false,
+        },
+        creditRating: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: true
         }
     },
     { timestamps: true }
