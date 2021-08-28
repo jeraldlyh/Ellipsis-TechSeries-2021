@@ -27,6 +27,10 @@ const Product = db.define(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        instalment: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         quantity: {
             type: DataTypes.INTEGER,
             allowNull: false,
