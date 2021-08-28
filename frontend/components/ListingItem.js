@@ -12,6 +12,7 @@ export default function ListingItem(props) {
       <div className={styles.productName}>{props.name}</div>
       <div className={styles.companyName}>{props.company}</div>
       <div className={styles.price}>{props.price}</div>
+      <div className={styles.bnpl2}>BNPL Scheme offered:</div>
       <div className={styles.bnpl}>{props.bnpl}</div>
     </div>
   )

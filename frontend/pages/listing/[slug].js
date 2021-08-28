@@ -21,7 +21,7 @@ const Listing = () => {
                     <div className={styles.productName2}>{name}</div>
                     <div className={styles.price2}>{price}</div>
                     <div className={styles.detail}>{desc}</div>
-                    <div className={styles.bnpl}>BNPL Scheme: {bnpl}</div>
+                    <div className={styles.bnpl2}>BNPL Scheme: {bnpl}</div>
                     <div className={styles.price2}>Quantity: </div>
                 </div>
             </div>
