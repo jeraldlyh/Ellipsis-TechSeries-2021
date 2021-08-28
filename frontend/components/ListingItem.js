@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 export default function ListingItem(props) {
   const router = useRouter();
-  const [isCardView, setIsCardView] = useState(false)
+  const [isCardView, setIsCardView] = useState(true)
   const visible = "cursor-pointer"
   const hidden = "cursor-pointer opacity-30"
 
