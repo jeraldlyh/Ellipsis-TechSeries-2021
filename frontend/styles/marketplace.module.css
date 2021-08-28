@@ -1,0 +1,52 @@
+.header1 {
+    font-family: 'Alatsi', sans-serif;
+    font-size: 2.7rem;
+    color: #D02626;
+    text-align: center;
+}
+
+.header1container {
+    margin: auto;
+    padding: 10px;
+    max-width: 50%;
+}
+
+.subheader {
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    /* line-height: 100%; */
+    /* align-self: center;
+    vertical-align: top;
+    letter-spacing: 5%; */
+}
+
+.productName {
+    /* font-family: 'Abhaya Libre', serif; */
+    font-family: 'Alatsi', serif;
+    font-size: 1.5rem;
+    color: #424242;
+    text-align: center;
+}
+
+.companyName {
+    /* font-family: 'Abhaya Libre', serif; */
+    font-family: 'Alatsi', serif;
+    font-size: 1rem;
+    color: #424242;
+    text-align: center;
+}
+
+.price {
+    /* font-family: 'Abhaya Libre', serif; */
+    font-family: 'Alatsi', serif;
+    font-size: 0.8rem;
+    color: #424242;
+    text-align: center;
+}
+
+
+.background {
+    background-color: #F4F4F4;
+    background-repeat: repeat-y;
+}
