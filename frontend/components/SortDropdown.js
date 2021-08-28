@@ -13,7 +13,7 @@ function SortDropdown({ data, selected, setSelected }) {
     })
 
     const listBoxOption = (active) => {
-        console.log(active)
+        // console.log(active)
         return classNames({
         
         "cursor-default select-none relative": true,
@@ -27,7 +27,7 @@ function SortDropdown({ data, selected, setSelected }) {
         "font-normal": !selected,
     })
 
-    console.log(selected)
+    // console.log(selected)
 
     return (
         <Listbox value={selected} onChange={setSelected}>
