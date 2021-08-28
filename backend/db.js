@@ -10,5 +10,4 @@ const db = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.e
 )
 
 // db.sync({ force: true })
-
 module.exports = db
