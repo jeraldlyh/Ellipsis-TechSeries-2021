@@ -15,6 +15,7 @@ module.exports = {
             instalment: instalment,
             price: price,
         })
+        return res.sendStatus(200)
     },
     uploadProductImage: async function (req, res) {
         const { data, type } = req.body
@@ -37,7 +38,19 @@ module.exports = {
                 return res.status(400).send(error.code)
             }
             console.log(data, data.Location)
-            return res.status(201).json({imageURL: data.Location})
-        })  
+            return res.status(201).json({ imageURL: data.Location })
+        })
+    },
+    getProduct: async function (req, res) {
+        const products = await Models.Product.findAll({
+            where: {
+                isHidden: false
+            }
+        })
+
+        const result = _.map(products, function (p) {
+            return p.toJSON()
+        })
+        res.status(200).json({ products: result })
     }
 }

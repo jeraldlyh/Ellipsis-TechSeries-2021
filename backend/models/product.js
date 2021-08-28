@@ -38,7 +38,7 @@ const Product = db.define(
         isHidden: {
             type: DataTypes.BOOLEAN,
             allowNull: true,
-            default: false,
+            defaultValue: false,
         },
         companyID: {
             type: DataTypes.STRING(10),
