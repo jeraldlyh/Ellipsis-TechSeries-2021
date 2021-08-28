@@ -1,7 +1,10 @@
 import Navbar from "../components/Navbar";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineArrowLeft } from "react-icons/ai";
+import { useRouter } from "next/router"
 
 export default function Upload() {
+  const router = useRouter()
+
   return (
     <div className="h-screen overflow-hidden">
       <Navbar />
@@ -9,6 +12,12 @@ export default function Upload() {
         className="overflow-hidden -mt-10 w-full h-screen flex items-center justify-center"
         style={{ backgroundColor: "#F4F4F4" }}
       >
+        <div class="justify-start items-start mr-10 flex h-96">
+          <AiOutlineArrowLeft
+            className="cursor-pointer w-6 h-6"
+            onClick={() => router.back()}
+          />
+        </div>
         <div className="bg-white shadow-md rounded-2xl flex justify-between pl-10">
           <div className="flex-col flex ml-8 mr-16">
             <span className="mt-14 mb-14 text-3xl tracking-wider font-semibold" style={{ color: "#D02626" }}>LISTING DETAILS</span>
