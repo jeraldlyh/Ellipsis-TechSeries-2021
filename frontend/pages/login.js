@@ -11,7 +11,7 @@ export default function login() {
         >
           <div className="items-start flex flex-col mr-12">
             <div className="text-red-700 font-semibold text-2xl tracking-wider mb-1">
-              CREATE ACCOUNT
+              LOGIN
             </div>
             <div
               style={{ fontSize: 13 }}
@@ -22,45 +22,23 @@ export default function login() {
             <input
               className="mb-2 px-5 border"
               style={{ width: 250, height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
-              placeholder="Name"
-            ></input>
-            <input
-              className="mb-2 px-5 border"
-              style={{ width: 250, height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
               placeholder="Email"
-            ></input>
+              type="email"
+            />
             <input
               className="mb-8 px-5 border"
               style={{ width: 250, height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
               placeholder="Password"
-            ></input>
-            <div
-              style={{ width: 250, height: 40 }}
-              className="justify-between flex flex-row"
-            >
+              type="password"
+            />
+            <div className="flex flex-row" style={{ width: 250, height: 40}}>
               <div
                 style={{
                   borderWidth: 1,
-                  width: 110,
-                  height: 37,
                   borderRadius: 10,
-                  backgroundColor: "#D02626",
                   color: 'white'
                 }}
-                className="items-center flex justify-center"
-              >
-                Sign up
-              </div>
-              <div
-                style={{
-                  borderWidth: 1,
-                  width: 110,
-                  height: 37,
-                  borderRadius: 10,
-                  color: '#D02626',
-                  borderColor: '#D02626'
-                }}
-                className="items-center flex justify-center"
+                className="w-full items-center flex justify-center bg-red-600 hover:bg-red-700 cursor-pointer"
               >
                 Sign in
               </div>
