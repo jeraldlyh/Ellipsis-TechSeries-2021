@@ -22,7 +22,10 @@ const Listing = () => {
                     <div className={styles.price2}>{price}</div>
                     <div className={styles.detail}>{desc}</div>
                     <div className={styles.bnpl}>BNPL Scheme: {bnpl}</div>
-                    <div className={styles.price2}>Quantity: </div>
+                    <div className={styles.price2}>Stock: </div>
+                    <div className = "w-14 h-6 text-center flex-col flex mt-4 rounded justify-center border text-white" style = {{backgroundColor:"#3A3A3A"}}>
+                        Edit
+                    </div>
                 </div>
             </div>
             <div className="pt-48" />

@@ -12,7 +12,7 @@ const Product = () => {
         <div className={styles.background}>
             <Navbar></Navbar>
             <div className="flex justify-center pt-32">
-                <div class="ml-64">
+                <div>
                     <AiOutlineArrowLeft
                         className="cursor-pointer w-6 h-6"
                         onClick={() => router.back()}
@@ -26,7 +26,7 @@ const Product = () => {
                     height="445"
                 />
 
-                <div className="pb-5 p-20 pr-20">
+                <div className="pb-5 p-20 pr-20" style= {{width:600}}>
                     <div className={styles.companyName2}>{company}</div>
                     <div className={styles.productName2}>{name}</div>
                     <div className={styles.price2}>{price}</div>
