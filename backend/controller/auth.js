@@ -3,26 +3,27 @@ const Models = require("../models")
 const _ = require("lodash")
 
 
-const refreshTokens = {}
+var refreshTokens = []
 
 module.exports = {
     loginUser: async function (req, res) {
         const { email, password } = req.body
-        const response = await Models.Company.findOne({
+        const company = await Models.Company.findOne({
             where: {
                 email: email,
                 password: password,
             }
         })
-        if (response) {
-            const token = module.exports.generateAccessToken(email)
+        if (company) {
+            const UEN = company.toJSON().UEN
+            const token = module.exports.generateAccessToken(UEN)
             const tokenResponse = {
                 access_token: token,
                 refresh_token: token,
-                email: email,
+                uen: UEN,
             }
+            refreshTokens.push(token)
             res.status(200).json(tokenResponse)
-            _.extend(refreshTokens, tokenResponse)
         } else {
             res.status(401).end()
         }
@@ -61,4 +62,23 @@ module.exports = {
             next()
         })
     },
+    refreshToken: function (req, res) {
+        const token = req.body.refresh_token
+        if (!_.includes(refreshTokens, token)) {
+            return res.sendStatus(403)
+        }
+        jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
+            if (err) {
+                return res.sendStatus(403)
+            }
+            const token = module.exports.generateAccessToken(user.id)
+            return res.status(200).json({ "refresh_token": token })
+        })
+    },
+    logoutUser: function (req, res) {
+        const { token } = req.body
+        refreshTokens = _.filter(refreshTokens, function(t) {
+            return t !== token
+        })
+    }
 }
