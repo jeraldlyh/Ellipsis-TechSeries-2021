@@ -1,12 +1,12 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import Navbar from "../components/layout/Navbar"
+import Footer from "../components/layout/Footer"
 import { useRouter } from "next/router"
 
 export default function Home() {
   const router = useRouter()
 
   return (
-    <div className="flex flex-col min-h-screen py-2">
+    <div>
       <Navbar />
       <div className="bg-gray-100 w-screen justify-center">
         <div className="justify-between flex tracking-widest font-semibold text-7xl w-screen h-screen px-28">

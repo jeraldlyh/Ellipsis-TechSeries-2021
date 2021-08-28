@@ -1,4 +1,4 @@
-import NavBar from "../components/Navbar"
+import NavBar from "../components/layout/Navbar"
 
 export default function login() {
     return (
