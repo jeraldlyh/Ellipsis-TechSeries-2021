@@ -21,7 +21,7 @@ const listings = () => {
             <div className="flex justify-between pb-7 pt-8 pl-32 pr-32">
                 <div className="text-xl font-semibold tracking-wide">Current Listings</div>
                 <div>
-                    <div onClick={() => router.push("/upload")} className="container border bg-red-700 hover:bg-red-800 cursor-pointer rounded-xl py-2 px-5 text-white">Add Listing</div>
+                    <div onClick={() => router.push("/upload")} className="container border bg-red-700 hover:bg-red-800 cursor-pointer rounded-lg py-2 px-5 text-white">Add Listing</div>
                 </div>
             </div>
 

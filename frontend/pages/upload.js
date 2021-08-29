@@ -12,7 +12,7 @@ export default function Upload() {
         className="overflow-hidden -mt-10 w-full h-screen flex items-center justify-center"
         style={{ backgroundColor: "#F4F4F4" }}
       >
-        <div class="justify-start items-start mr-10 flex h-96">
+        <div class="justify-start items-start mr-10 flex -mt-28 h-96">
           <AiOutlineArrowLeft
             className="cursor-pointer w-6 h-6"
             onClick={() => router.back()}
