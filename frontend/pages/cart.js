@@ -36,7 +36,7 @@ export default function Home() {
         <CartItem />
 
         {/* Payment Plans */}
-        <div style={{ backgroundColor: "#E7E7E7" }} className="w-full mt-10 px-20 py-10 justify-between flex-row flex rounded-3xl shadow-md">
+        <div className="bg-white w-full mt-10 mb-12 px-20 py-10 justify-between flex-row flex rounded-3xl shadow-md">
           <div className="flex-col flex">
             <span className="mb-5 text-xl">Choose Payment Plan:</span>
             <FormControl component="fieldset">
