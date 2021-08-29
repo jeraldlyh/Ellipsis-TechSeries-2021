@@ -24,7 +24,6 @@ export default function Items() {
             }
 
             const response = await axiosInstance.post("api/product/image", file)
-            console.log(response.data)
             const product = {
                 name: name,
                 description: description,
