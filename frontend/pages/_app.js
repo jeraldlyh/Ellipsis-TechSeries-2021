@@ -1,5 +1,5 @@
 import "tailwindcss/tailwind.css"
-// import { withAuth } from "../hooks/withAuth"
+import { withAuth } from "../hooks/withAuth"
 
 
 function MyApp({ Component, pageProps }) {
