@@ -8,38 +8,38 @@ import axiosInstance from "../axios/axiosInstance"
 
 
 const marketplace = () => {
-  const [category, setCategory] = useState({
-    id: 1,
-    name: "Sort By..."
-  })
+    const [category, setCategory] = useState({
+        id: 1,
+        name: "Sort By..."
+    })
+    const [products, setProducts] = useState([])
 
-  const [products, setProducts] = useState([])
-  const getProducts = async () => {
-    const response = await axiosInstance.get("/api/product")
-    setProducts(response.data.products)
-  }
+    useEffect(() => {
+        getProducts()
+    }, [])
 
-  useEffect(() => {
-    getProducts()
-  }, [])
-  const data = [
-    {
-      id: 1,
-      name: "Price"
-    },
-    {
-      id: 2,
-      name: "Name"
-    },
-    {
-      id: 3,
-      name: "Date Added"
-    },
-    {
-      id: 4,
-      name: "Sales"
+    const getProducts = async () => {
+        const response = await axiosInstance.get("/api/product")
+        setProducts(response.data.products)
     }
-  ]
+    const data = [
+        {
+            id: 1,
+            name: "Price"
+        },
+        {
+            id: 2,
+            name: "Name"
+        },
+        {
+            id: 3,
+            name: "Date Added"
+        },
+        {
+            id: 4,
+            name: "Sales"
+        }
+    ]
 
   return (
     <div className={styles.background}>

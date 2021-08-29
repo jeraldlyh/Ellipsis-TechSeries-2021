@@ -15,7 +15,7 @@ const BillItem = (props) => {
           <div className="rounded-full bg-gray-200 w-full text-xs flex items-center px-3 py-1 mr-2" />
           <div style={{ width: `${props.current / props.total * 100}%` }} className="absolute rounded-full w-20 bg-red-700 text-xs flex items-center px-3 py-1 mr-2" />
         </div>
-        <div className="text-red-700 mt-1 text-xxs">{props.current}/{props.total} INSTALMENTS TO GO</div>
+        <div className="text-red-700 mt-1 text-xs">{props.current}/{props.total} INSTALMENTS TO GO</div>
       </div>
     </div>
   )
