@@ -2,9 +2,11 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { useRouter } from "next/router"
 import styles from '../styles/marketplace.module.css'
+import { useAuth } from "../hooks/useAuth"
 
 export default function Home() {
   const router = useRouter()
+  const {session, loading} = useAuth()
 
   return (
     <div className={[styles.background, "overflow-x-hidden"]}>
@@ -19,7 +21,9 @@ export default function Home() {
               BNPL
             </div>
             <div className="border-b-8 border-red-700" />
-            <div className="font-normal text-lg py-3 px-5 mt-12 tracking-wider bg-black rounded-md text-white text-center text-base cursor-pointer hover:bg-gray-700" onClick={() => router.push("/register")}>Register now</div>
+            {
+                session ? null : <div className="font-normal text-lg py-3 px-5 mt-12 tracking-wider bg-black rounded-md text-white text-center text-base cursor-pointer hover:bg-gray-700" onClick={() => router.push("/register")}>Register now</div>
+            }
           </div>
           <img src="/landing/building.png" className="pt-10 pb-24 h-screen" />
         </div>
