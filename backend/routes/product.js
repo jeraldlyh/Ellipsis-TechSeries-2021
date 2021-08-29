@@ -4,8 +4,7 @@ const router = express.Router()
 
 
 router.route("/").post(createProduct).get(getProduct)
-router.route("/:companyID").get(getProductByID)
-
+router.route("/:productID").get(getProductByID)
 router.route("/image").post(uploadProductImage)
 
 module.exports = router

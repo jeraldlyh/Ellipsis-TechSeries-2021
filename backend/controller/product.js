@@ -55,18 +55,15 @@ module.exports = {
         res.status(200).json({ products: result })
     },
     getProductByID: async function (req, res) {
-        const products = await Models.Product.findAll({
+        const product = await Models.Product.findOne({
             where: {
-                companyID: req.params.companyID,
+                id: req.params.productID,
             },
             include: {
                 model: Models.Company,
                 attributes: ["name"]
             }
         })
-        const result = _.map(products, function (p) {
-            return p.toJSON()
-        })
-        return res.status(200).json({ products: result })
+        return res.status(200).json({ product: product })
     }
 }

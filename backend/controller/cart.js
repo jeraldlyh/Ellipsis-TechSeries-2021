@@ -32,5 +32,16 @@ module.exports = {
                 companyID: companyID,
             }
         })
+    },
+    getProductByID: async function (req, res) {
+        const { productID, companyID } = req.params
+
+        const cart = await Models.Cart.findOne({
+            where: {
+                companyID: companyID,
+                productID: productID,
+            }
+        })
+        cart ? res.status(200).json({ cart: cart.toJSON() }) : res.sendStatus(200)
     }
 }

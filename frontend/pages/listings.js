@@ -12,7 +12,7 @@ const Listing = () => {
     const { session, loading } = useAuth()
 
     const getListing = async () => {
-        const response = await axiosInstance.get(`/api/product/${session.uen}`)
+        const response = await axiosInstance.get(`/api/company/${session.uen}`)
         console.log(response.data)
         setListings(response.data.products)
     }
