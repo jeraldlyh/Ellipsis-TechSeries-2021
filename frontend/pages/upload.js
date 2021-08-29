@@ -41,6 +41,7 @@ export default function Upload() {
                 companyID: session.uen,
             }
             await axiosInstance.post("api/product/", product)
+            router.push("/listings")
         } catch (error) {
             console.log(error)
         }

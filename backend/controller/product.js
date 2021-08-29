@@ -53,5 +53,17 @@ module.exports = {
             return p.toJSON()
         })
         res.status(200).json({ products: result })
+    },
+    getProductByID: async function (req, res) {
+        const product = await Models.Product.findOne({
+            where: {
+                id: req.params.productID,
+            },
+            include: {
+                model: Models.Company,
+                attributes: ["name"]
+            }
+        })
+        return res.status(200).json({ product: product })
     }
 }

@@ -6,7 +6,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const Listing = () => {
   const router = useRouter();
-  const { name, company, price, image, desc, bnpl } = router.query
+  const {name, company, price, image, desc, bnpl } = router.query
 
   return (
     <div className={styles.background}>
@@ -49,7 +49,8 @@ const Listing = () => {
             </div> */}
           </div>
 
-          <div className="w-28 h-10 mt-5 rounded-lg border text-center justify-center flex-col flex bg-black hover:bg-gray-700 cursor-pointer">
+          <div onClick={() => { router.push({ pathname: "/editlisting/" , query: { name: name, company: company, price: price, image: image, desc: desc, bnpl: bnpl } }) }}
+          className="w-28 h-10 mt-5 rounded-lg border text-center justify-center flex-col flex bg-black hover:bg-gray-700 cursor-pointer">
             <span className="text-white">EDIT</span>
           </div>
         </div>
@@ -58,5 +59,7 @@ const Listing = () => {
     </div>
   )
 }
+
+//onClick={() => { router.push({ pathname: "/listing/" + `${props.id}`, query: { name: props.name, company: props.company, price: props.price, image: props.image, desc: props.desc, bnpl: props.bnpl } }) 
 
 export default Listing

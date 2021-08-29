@@ -5,7 +5,6 @@ import { signOut } from "next-auth/client"
 export default function Navbar() {
   const router = useRouter()
   const { session, loading } = useAuth()
-  console.log(session)
 
   const logout = () => {
     router.push("/login")

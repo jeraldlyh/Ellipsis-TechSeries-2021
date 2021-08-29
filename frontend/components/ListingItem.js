@@ -2,8 +2,9 @@
 import { useRouter } from 'next/router'
 import styles from '../styles/marketplace.module.css'
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@material-ui/core/IconButton'
 import { useState } from 'react'
+import NumberFormat from 'react-number-format'
 
 export default function ListingItem(props) {
   const router = useRouter();
@@ -25,9 +26,9 @@ export default function ListingItem(props) {
       <div onClick={() => { router.push({ pathname: "/listing/" + `${props.id}`, query: { name: props.name, company: props.company, price: props.price, image: props.image, desc: props.desc, bnpl: props.bnpl } }) }}>
         <div className={styles.productName}>{props.name}</div>
         <div className={styles.companyName}>{props.company}</div>
-        <div className={styles.price}>{props.price}</div>
+        <NumberFormat className={styles.price} value={props.price} displayType={"text"} thousandSeparator={true} prefix={"$"} />
         <div className={styles.bnpl2}>BNPL Scheme offered:</div>
-        <div className={styles.bnpl}>{props.bnpl}</div>
+        <div className={styles.bnpl}>Monthly payment across {props.bnpl} months</div>
       </div>
     </div>
   )

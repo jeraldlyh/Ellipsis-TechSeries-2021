@@ -11,7 +11,6 @@ export const withAuth = () => {
     return function (Component) {
         return function (props) {
             const { session, loading } = useAuth()
-            console.log("Loading: ", loading, "Session: ", session)
 
             if (!loading && session && session.error) {             // Handle expired tokens
                 signOut()
