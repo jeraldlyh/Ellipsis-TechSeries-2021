@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../styles/listings.module.css'
 import Navbar from '../components/Navbar.js'
 import ListingItem from '../components/ListingItem'
 import router from 'next/router'
+import axiosInstance from '../axios/axiosInstance'
+import { useAuth } from '../hooks/useAuth'
 
-const listings = () => {
+
+const Listing = () => {
+    const [listings, setListings] = useState([])
+    const { session, loading } = useAuth()
+
+    const getListing = async () => {
+        const response = await axiosInstance.get(`/api/product/${session.uen}`)
+        console.log(response.data)
+        setListings(response.data.products)
+    }
+
+    useEffect(() => {
+        getListing()
+    }, [])
+
     return (
         <div className={styles.background}>
             <Navbar />
@@ -26,13 +42,20 @@ const listings = () => {
             </div>
 
             <div className="grid gap-y-16 grid-cols-3 justify-items-center p-0.5 pl-20 pr-20 pb-30">
-                <ListingItem id={1} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45" desc="Everyday Bag to serve your everyday needs, now comes very nicely in new colour." bnpl= "Monthly payment across 12 months"/>
-                <ListingItem id={2} image="/photos/marketplace/handbag.jpeg" name="Estla hand bag" company="BigBagCompany" price="S$ 30" desc="An extremely functional bag to cater to all your needs. It is spacious enough for all your daily necessity, all while remaining fashionable." bnpl= "Monthly payment across 12 months"/>
-                <ListingItem id={3} image="/photos/marketplace/totebag.jpeg" name="Cowhide hand bag" company="ECCOwide" price="S$ 45" desc="For seekers of special textures, our unique cowhide hand bags for offer a different experience" bnpl= "Monthly payment across 6 months"/>
+                {
+                    listings && listings.length !== 0
+                        ? listings.map(listing => {
+                            return <ListingItem key={listing.id} id={listing.id} image={listing.image} company={listing.Company.name} name={listing.name} price={listing.price} desc={listing.description} bnpl={listing.instalment} />
+                        })
+                        : null
+                }
+                <ListingItem id={1} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45" desc="Everyday Bag to serve your everyday needs, now comes very nicely in new colour." bnpl="Monthly payment across 12 months" />
+                <ListingItem id={2} image="/photos/marketplace/handbag.jpeg" name="Estla hand bag" company="BigBagCompany" price="S$ 30" desc="An extremely functional bag to cater to all your needs. It is spacious enough for all your daily necessity, all while remaining fashionable." bnpl="Monthly payment across 12 months" />
+                <ListingItem id={3} image="/photos/marketplace/totebag.jpeg" name="Cowhide hand bag" company="ECCOwide" price="S$ 45" desc="For seekers of special textures, our unique cowhide hand bags for offer a different experience" bnpl="Monthly payment across 6 months" />
             </div>
             <div className="pt-32"></div>
         </div>
     )
 }
 
-export default listings
+export default Listing
