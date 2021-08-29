@@ -9,8 +9,8 @@ export default function CartItem(props) {
     <div>
       <div className="pl-16 mt-4 pt-3 flex-row flex justify-between">
         <div className="flex-row flex h-36">
-          <img src="/flour.jpg" className="w-36" />
-          <div className="justify-center flex-col flex ml-20">
+          <img src={props.image} className="object-cover w-36" />
+          <div className="text-lg justify-center flex-col flex ml-14">
             <span>{props.name}</span>
             <span className="text-sm">{props.company}</span>
             <span className="text-red-700">S$ {props.price}</span>
