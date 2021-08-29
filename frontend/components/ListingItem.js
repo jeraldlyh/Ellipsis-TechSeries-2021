@@ -1,8 +1,7 @@
 
 import { useRouter } from 'next/router'
 import styles from '../styles/marketplace.module.css'
-import { AiFillEye } from "react-icons/ai"
-import { AiFillEyeInvisible } from "react-icons/ai"
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 import IconButton from '@material-ui/core/IconButton';
 import { useState } from 'react'
 
