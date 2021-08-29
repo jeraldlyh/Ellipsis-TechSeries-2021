@@ -47,7 +47,7 @@ const Product = () => {
                     />
 
                     <img
-                        className="ml-10 flex justify-end object-cover"
+                        className="ml-10 flex justify-end object-contain"
                         src={product.image}
                         width="330"
                         height="445"

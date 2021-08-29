@@ -66,7 +66,7 @@ const Editlisting = () => {
             </div>
           </div>
           <div className="w-56 bg-black ml-8 ">
-            <img src="/upload/uploadPic.jpeg" className="w-full h-full object-cover rounded-r-2xl" />
+            <img src="/upload/uploadPic.jpeg" className="w-full h-full object-contain rounded-r-2xl" />
           </div>
         </div>
       </div>

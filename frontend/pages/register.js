@@ -21,7 +21,7 @@ export default function Register() {
       password: password,
       email: email,
     })
-    const callbackUrl = process.env.NEXTAUTH_URL || "http://127.0.0.1:3000/"
+    const callbackUrl = process.env.NEXTAUTH_URL + "/calculateCredit" || "http://127.0.0.1:3000/calculateCredit"
     await signIn("credentials", { email: email, password: password, callbackUrl: callbackUrl })
   }
 

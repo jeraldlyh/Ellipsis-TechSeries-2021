@@ -64,8 +64,8 @@ function ImageSelector({ images, setImages, onChange }) {
                                 <div key={index} className="flex flex-col items-center border rounded p-3">
                                     <Image className="flex" src={image["data_url"]} alt="" width="100%" height="100%" layout="fixed" />
                                     <div className="flex w-full mt-3 justify-around">
-                                        <div className="text-xs" onClick={() => onImageUpdate(index)}>Update</div>
-                                        <div className="text-xs" onClick={() => onImageRemove(index)}>Remove</div>
+                                        <div className="text-xs cursor-pointer" onClick={() => onImageUpdate(index)}>Update</div>
+                                        <div className="text-xs cursor-pointer text-red-700" onClick={() => onImageRemove(index)}>Remove</div>
                                     </div>
                                 </div>
                             ))

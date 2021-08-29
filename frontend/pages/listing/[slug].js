@@ -20,7 +20,7 @@ const Listing = () => {
         </div>
 
         <img
-          class="ml-10 flex justify-end object-cover"
+          class="ml-10 flex justify-end object-contain"
           src={image}
           width="330"
           height="445"

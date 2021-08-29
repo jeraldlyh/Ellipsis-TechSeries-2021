@@ -1,11 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar.js'
-import { AiOutlinePlus, AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowLeft } from "react-icons/ai"
 import { useRouter } from "next/router"
+import NumberFormat from "react-number-format"
+import axiosInstance from '../axios/axiosInstance.js'
+import { useAuth } from '../hooks/useAuth.js'
 
 
 const calculateCredit = () => {
     const router = useRouter()
+    const [liquid, setLiquid] = useState("")
+    const [liabilities, setLiabilities] = useState("")
+    const [netProfit, setNetProfit] = useState("")
+    const [revenue, setRevenue] = useState("")
+    const [cashFlow, setCashFlow] = useState("")
+    const [shares, setShares] = useState("")
+    const [debt, setDebt] = useState("")
+    const [asset, setAsset] = useState("")
+    const { session, loading } = useAuth()
+
+    const submitCreditRating = async () => {
+        const quickRatio = parseInt(liquid.replace("$", "")) / parseInt(liabilities.replace("$", ""))
+        const netProfitMargin = parseInt(netProfit.replace("$", "")) / parseInt(revenue.replace("$", ""))
+        const debtRatio = parseInt(debt.replace("$", "")) / parseInt(asset.replace("$", ""))
+        const operatingCashFlowPerShare = parseInt(cashFlow.replace("$", "")) / parseInt(shares.replace("$", ""))
+
+        const body = {
+            quickRatio: quickRatio,
+            netProfitMargin: netProfitMargin,
+            debtRatio: debtRatio,
+            operatingCashFlowPerShare: operatingCashFlowPerShare,
+            companyID: session.uen,
+        }
+        await axiosInstance.post("/api/company/credit", body)
+        router.push("/home")
+    }
 
     return (
         <div className="h-screen overflow-hidden">
@@ -14,7 +43,7 @@ const calculateCredit = () => {
                 className="overflow-hidden -mt-10 w-full h-screen flex items-center justify-center"
                 style={{ backgroundColor: "#F4F4F4" }}
             >
-                <div class="justify-start items-start mr-10 flex -mt-24 h-96">
+                <div className="justify-start items-start mr-10 flex -mt-24 h-96">
                     <AiOutlineArrowLeft
                         className="cursor-pointer w-6 h-6"
                         onClick={() => router.back()}
@@ -26,52 +55,117 @@ const calculateCredit = () => {
                         <div className="w-96 h-96 flex-row flex justify-between">
                             <div className="w-96 flex flex-col">
                                 <span className="text-xs pb-1" >Liquid Assets</span>
-                                <input
+                                <NumberFormat
                                     className="w-full h-8 w-56 border rounded-md mb-5 focus:outline-none px-3 text-xs"
-                                    style={{ backgroundColor: "#F7F7F7"}}
+                                    style={{ backgroundColor: "#F7F7F7" }}
+                                    value={liquid}
+                                    prefix="$"
+                                    type="text"
+                                    thousandSeparator={true}
+                                    displayType="input"
+                                    onValueChange={(values) => {
+                                        const { formattedValue, value } = values
+                                        setLiquid(formattedValue)
+                                    }}
                                 />
                                 <span className="text-xs pb-1">Liabilities</span>
-                                <input
+                                <NumberFormat
                                     className="w-full h-8 w-56 border rounded-md mb-5 focus:outline-none px-3 text-xs"
-                                    style={{ backgroundColor: "#F7F7F7"}}
+                                    style={{ backgroundColor: "#F7F7F7" }}
+                                    value={liabilities}
+                                    prefix="$"
+                                    type="text"
+                                    thousandSeparator={true}
+                                    displayType="input"
+                                    onValueChange={(values) => {
+                                        const { formattedValue, value } = values
+                                        setLiabilities(formattedValue)
+                                    }}
                                 />
                                 <span className="text-xs pb-1">Company Net profits</span>
-                                <input
+                                <NumberFormat
                                     className="w-full h-8 w-56 border rounded-md mb-5 focus:outline-none px-3 text-xs"
-                                    style={{ backgroundColor: "#F7F7F7"}}
+                                    style={{ backgroundColor: "#F7F7F7" }}
+                                    value={netProfit}
+                                    prefix="$"
+                                    type="text"
+                                    thousandSeparator={true}
+                                    displayType="input"
+                                    onValueChange={(values) => {
+                                        const { formattedValue, value } = values
+                                        setNetProfit(formattedValue)
+                                    }}
                                 />
                                 <span className="text-xs pb-1">Company Revenue</span>
-                                <input
+                                <NumberFormat
                                     className="w-full h-8 w-56 border rounded-md mb-5 focus:outline-none px-3 text-xs"
-                                    style={{ backgroundColor: "#F7F7F7"}}
+                                    style={{ backgroundColor: "#F7F7F7" }}
+                                    value={revenue}
+                                    prefix="$"
+                                    type="text"
+                                    thousandSeparator={true}
+                                    displayType="input"
+                                    onValueChange={(values) => {
+                                        const { formattedValue, value } = values
+                                        setRevenue(formattedValue)
+                                    }}
                                 />
                             </div>
 
                             <div className="w-96 flex flex-col ml-16">
-                                <span className="text-xs pb-1">Instalment Period (Months)</span>
-                                <input
+                                <span className="text-xs pb-1">Net Cash Flow from Operating Activities</span>
+                                <NumberFormat
                                     className="w-full h-8 w-56 border rounded-md mb-5 focus:outline-none px-3 text-xs"
-                                    style={{ backgroundColor: "#F7F7F7"}}
+                                    style={{ backgroundColor: "#F7F7F7" }}
+                                    value={cashFlow}
+                                    prefix="$"
+                                    type="text"
+                                    thousandSeparator={true}
+                                    displayType="input"
+                                    onValueChange={(values) => {
+                                        const { formattedValue, value } = values
+                                        setCashFlow(formattedValue)
+                                    }}
                                 />
                                 <span className="text-xs pb-1">Number of outstanding shares</span>
                                 <input
                                     className="w-full h-8 w-56 border rounded-md mb-5 focus:outline-none px-3 text-xs"
-                                    style={{ backgroundColor: "#F7F7F7"}}
+                                    style={{ backgroundColor: "#F7F7F7" }}
+                                    value={shares}
+                                    onChange={e => setShares(e.target.value)}
                                 />
 
                                 <span className="text-xs pb-1">Total debt</span>
-                                <input
+                                <NumberFormat
                                     className="w-full h-8 w-56 border rounded-md mb-5 focus:outline-none px-3 text-xs"
-                                    style={{ backgroundColor: "#F7F7F7"}}
+                                    style={{ backgroundColor: "#F7F7F7" }}
+                                    value={debt}
+                                    prefix="$"
+                                    type="text"
+                                    thousandSeparator={true}
+                                    displayType="input"
+                                    onValueChange={(values) => {
+                                        const { formattedValue, value } = values
+                                        setDebt(formattedValue)
+                                    }}
                                 />
 
                                 <span className="text-xs pb-1">Total assets</span>
-                                <input
+                                <NumberFormat
                                     className="w-full h-8 w-56 border rounded-md mb-5 focus:outline-none px-3 text-xs"
-                                    style={{ backgroundColor: "#F7F7F7"}}
+                                    style={{ backgroundColor: "#F7F7F7" }}
+                                    value={asset}
+                                    prefix="$"
+                                    type="text"
+                                    thousandSeparator={true}
+                                    displayType="input"
+                                    onValueChange={(values) => {
+                                        const { formattedValue, value } = values
+                                        setAsset(formattedValue)
+                                    }}
                                 />
 
-                                <div className="bg-red-700 hover:bg-red-800 cursor-pointer text-center rounded-lg h-8 w-56 items-center justify-center self-end flex flex-row border">
+                                <div className="bg-red-700 hover:bg-red-800 cursor-pointer text-center rounded-lg h-8 w-56 items-center justify-center self-end flex flex-row border" onClick={submitCreditRating}>
                                     <span className="text-xs text-white w-full h-full flex flex-wrap content-center justify-center">
                                         Calculate my credit rating!
                                     </span>
