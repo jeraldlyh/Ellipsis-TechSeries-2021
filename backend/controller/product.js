@@ -89,6 +89,16 @@ module.exports = {
             instalment: instalment,
             price: price,
         })
-        return res.sendStatus(200)
+        return res.sendStatus(200)},
+        
+    sendTeleNotif: async function (req, res){
+        console.log("hello1")
+        const chatID = 73874853
+        const botID = "1921909531:AAGLurVfcrqMKzgk2DEzSE2SkYyFpYYKEo0"
+        const text = "YOOO"
+        const url = "https://api.telegram.org/bot" + botID + "/sendmessage?chat_id=" + chatID + "&parse_mode=Markdown&text=" + text; 
+        console.log(url)
+        await fetch(url);
+        return res.status(200)
     }
 }
