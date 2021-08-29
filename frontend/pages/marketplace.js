@@ -28,7 +28,7 @@ const marketplace = () => {
   const data = [
     {
       id: 1,
-      name: "Date Added"
+      name: "Most recent"
     },
     {
       id: 2,
@@ -36,11 +36,11 @@ const marketplace = () => {
     },
     {
       id: 3,
-      name: "Price"
+      name: "Price (Low to high)"
     },
     {
       id: 4,
-      name: "Quantity"
+      name: "Price (High to low)"
     }
   ]
 
@@ -75,26 +75,21 @@ const marketplace = () => {
           {
             products && products.length !== 0
               ?
-              _.sortBy(_.filter(products, (product) => {
+              _.orderBy(_.filter(products, (product) => {
                 return _.includes(product.name, search)
-              }), (product) => { 
-                if (category.id === 1) return product.createdAt
-                if (category.id === 2) return product.name
-                if (category.id === 3) return product.price
-                if (category.id === 4) return product.quantity
-              })
-              .map(product => {
-                return <ProductItem key={product.id} id={product.id} name={product.name} image={product.image} company={product.Company.name} price={product.price} />
-              })
+              }),
+                (product) => {
+                  if (category.id === 1) return product.createdAt
+                  if (category.id === 2) return product.name
+                  if (category.id === 3) return product.price
+                  if (category.id === 4) return product.price
+                },
+                (category.id === 2 || category.id === 3) ? 'asc' : 'desc'
+              )
+                .map(product => {
+                  return <ProductItem key={product.id} id={product.id} name={product.name} image={product.image} company={product.Company.name} price={product.price} />
+                })
               : <></>
-
-            // _.sortBy_.filter(products, (product) => {
-            //   return _.includes(product.name, search)
-            // }).map(product => {
-            //   return <ProductItem key={product.id} id={product.id} name={product.name} image={product.image} company={product.Company.name} price={product.price} />
-            // })
-            // : <></>
-
           }
           {/* <ProductItem id={1} image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price="S$ 10"
                     desc="At PonHockSG, we provide the best flour you can find in Singapore, in terms of product quality, rice texture and product sustainability."
@@ -109,22 +104,22 @@ const marketplace = () => {
         </div>
         {
           products && products.length === 0 ?
-          <div className="flex flex-col justify-center items-center">
-            <img src="/marketplace/empty.png" className="h-40 opacity-80" />
-            <div className="-ml-14 mt-10 flex justify-center items-center">No items listed yet!</div>
-          </div>
-          :
-          (
-            _.filter(products, (product) => {
-              return _.includes(product.name, search)
-            }).length === 0 ?
             <div className="flex flex-col justify-center items-center">
               <img src="/marketplace/empty.png" className="h-40 opacity-80" />
-              <div className="-ml-14 mt-10 flex justify-center items-center">No search matches. Try a different keyword!</div>
+              <div className="-ml-14 mt-10 flex justify-center items-center">No items listed yet!</div>
             </div>
             :
-            null
-          )
+            (
+              _.filter(products, (product) => {
+                return _.includes(product.name, search)
+              }).length === 0 ?
+                <div className="flex flex-col justify-center items-center">
+                  <img src="/marketplace/empty.png" className="h-40 opacity-80" />
+                  <div className="-ml-14 mt-10 flex justify-center items-center">No search matches. Try a different keyword!</div>
+                </div>
+                :
+                null
+            )
         }
 
         <div className="pt-32"></div>

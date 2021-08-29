@@ -19,7 +19,7 @@ const Product = () => {
         const response = await axiosInstance.get(`/api/product/${slug}`)
         const existingCart = await axiosInstance.get(`/api/cart/${slug}/${session.uen}`)
         setProduct(response.data.product)
-        setQuantity(existingCart.data.cart.quantity)
+        setQuantity(0)
     }
 
     useEffect(() => {
