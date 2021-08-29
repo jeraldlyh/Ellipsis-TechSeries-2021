@@ -7,6 +7,7 @@ const { uuid } = require("uuidv4")
 module.exports = {
     createProduct: async function (req, res) {
         const { name, description, quantity, image, instalment, price, companyID } = req.body
+        console.log(req.body)
         await Models.Product.create({
             name: name,
             description: description,

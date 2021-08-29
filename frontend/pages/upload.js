@@ -36,7 +36,7 @@ export default function Upload() {
                 description: description,
                 instalment: instalment,
                 quantity: quantity,
-                price: price,
+                price: parseInt(price.replace("$", "")),
                 image: response.data.imageURL,
                 companyID: session.uen,
             }
