@@ -4,10 +4,11 @@ import { useRouter } from "next/router"
 import styles from '../styles/marketplace.module.css'
 import { useAuth } from "../hooks/useAuth"
 
-export default function Home() {
-  const router = useRouter()
-  const {session, loading} = useAuth()
 
+import axiosInstance from "../axios/axiosInstance"
+export default function Home() {
+  const {session, loading} = useAuth()
+  const router = useRouter()
   return (
     <div className={[styles.background, "overflow-x-hidden"]}>
       <Navbar />

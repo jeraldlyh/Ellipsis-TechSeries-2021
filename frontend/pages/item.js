@@ -37,7 +37,6 @@ export default function Items() {
             console.log(error)
         }
     }
-
     const onChange = (imageList, addUpdateIndex) => {
         setImages(imageList)
         console.log(imageList)
