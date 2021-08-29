@@ -2,18 +2,18 @@ import { Divider } from "@material-ui/core";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 import { useState } from 'react'
 
-export default function CartItem() {
-  const [quantity, setQuantity] = useState(0)
+export default function CartItem(props) {
+  const [quantity, setQuantity] = useState(1)
 
   return (
     <div>
       <div className="pl-16 mt-4 pt-3 flex-row flex justify-between">
         <div className="flex-row flex h-36">
-          <img src="/flour.jpg" className="w-36" />
-          <div className="justify-center flex-col flex ml-20">
-            <span>Premium Flour</span>
-            <span>S$ 10 / 100kg</span>
-            <span>PonHockSG</span>
+          <img src={props.image} className="object-cover w-36" />
+          <div className="text-lg justify-center flex-col flex ml-14">
+            <span>{props.name}</span>
+            <span className="text-sm">{props.company}</span>
+            <span className="text-red-700">S$ {props.price}</span>
           </div>
         </div>
         <div className="flex-row flex">
@@ -28,7 +28,7 @@ export default function CartItem() {
             </div>
           </div>
           <div className="w-32 flex-row flex items-center justify-evenly">
-            <span>$ 150</span>
+            <span>S$ {quantity * props.price}</span>
           </div>
           <div className="text-red-700 w-16 flex items-center justify-center cursor-pointer">
             <AiOutlineClose />
