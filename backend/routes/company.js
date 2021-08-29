@@ -4,7 +4,7 @@ const { getCompanyByID, getOrderReq } = require("../controller/company")
 const router = express.Router()
 
 
-router.route("/").post(creditRatingCalculation)
+router.route("/credit").post(creditRatingCalculation)
 router.route("/:companyID").get(getCompanyByID)
 router.route("/request/:companyID").get(getOrderReq)
 module.exports = router
