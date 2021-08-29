@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>ChequeMate</title>
         <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet" />
       </Head>
       <Component {...pageProps} />
@@ -14,4 +14,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default withAuth()(MyApp)
+export default MyApp
