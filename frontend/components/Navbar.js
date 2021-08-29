@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { useAuth } from "../hooks/useAuth"
 import { signOut } from "next-auth/client"
 import axiosInstance from "../axios/axiosInstance"
+import _ from 'lodash'
 
 
 export default function Navbar() {
@@ -38,8 +39,8 @@ export default function Navbar() {
                         ?
                         <div className="w-80 flex justify-between items-center">
                             <div className="tracking-wider text-sm cursor-pointer flex items-center" onClick={() => router.push("/profile")}>
-                                <img src="/profile/icon.png" className="w-6 h-6 rounded-full mr-3" />
-                                {profile.name}
+                                <img src="/profile/profile.png" className="w-6 h-6 rounded-full mr-3" />
+                                {_.upperFirst(profile.name)}
                             </div>
                             <div className="tracking-wider text-sm cursor-pointer flex items-center" onClick={() => router.push("/listings")}>
                                 My Listings

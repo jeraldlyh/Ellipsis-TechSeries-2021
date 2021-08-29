@@ -4,6 +4,7 @@ import OrderItem from '../components/OrderItem'
 import BillItem from '../components/BillItem'
 import { useAuth } from '../hooks/useAuth'
 import axiosInstance from "../axios/axiosInstance"
+import router from 'next/router'
 
 const Profile = () => {
     const { session, loading } = useAuth()
@@ -48,7 +49,7 @@ const Profile = () => {
                                 <div className="text-gray-600 text-base font-semibold tracking-wider">PHONE NO.</div>
                                 <div className="text-gray-600 text-base font-semibold">+65 9987 6234</div>
                             </div>
-                            <div className="cursor-pointer mt-20 flex justify-center py-2 rounded-lg bg-black hover:bg-gray-700 text-white">
+                            <div onClick={() => router.push("/listings")} className="cursor-pointer mt-20 flex justify-center py-2 rounded-lg bg-black hover:bg-gray-700 text-white">
                                 VIEW MY LISTINGS
                             </div>
                         </div>
@@ -62,7 +63,7 @@ const Profile = () => {
                                 <div className="col-span-2">QUANTITY</div>
                                 <div className="col-span-2"></div>
                             </div>
-                            <div className="h-60 overflow-x-hidden overflow-y-scroll">
+                            <div className="h-60 overflow-x-hidden overflow-y-scroll scrollbar-hide">
                                 <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
                                 <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
                                 <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
@@ -74,7 +75,7 @@ const Profile = () => {
                         </div>
                         <div className="bg-white rounded-3xl shadow-md w-full h-96 mb-16 px-12 py-6">
                             <div className="text-red-700 text-lg font-semibold tracking-wider border-b-2 pb-4">OUTSTANDING BILLS</div>
-                            <div className="h-72 overflow-x-hidden overflow-y-scroll">
+                            <div className="h-72 overflow-x-hidden overflow-y-scroll scrollbar-hide">
                                 <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={5} total={13} />
                                 <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={6} total={13} />
                                 <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={7} total={9} />
