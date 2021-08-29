@@ -16,7 +16,6 @@ function ImageSelector({ images, setImages, onChange }) {
             maxNumber={1}
             dataURLKey="data_url"
             onError={(error, files) => onError()}
-            acceptType={["jpg", "png"]}
         // resolutionHeight={480}
         // resolutionWidth={640}
         // resolutionType="less"

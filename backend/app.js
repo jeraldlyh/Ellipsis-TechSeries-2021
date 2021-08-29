@@ -6,6 +6,7 @@ const authRoutes = require("./routes/auth")
 const cartRoutes = require("./routes/cart")
 const productRoutes = require("./routes/product")
 const listingRoutes = require("./routes/listing")
+const telegramRoutes = require("./routes/telegram")
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use("/api/cart", cartRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/product", productRoutes)
 app.use("/api/listing", listingRoutes)
+app.use("/api/telegram", telegramRoutes)
 app.get("/", (req, res) => {
     res.json({ message: "ok" })
 })
