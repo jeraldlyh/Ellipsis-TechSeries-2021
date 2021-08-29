@@ -11,7 +11,9 @@ export default function Navbar() {
     const [profile, setProfile] = useState({})
 
     useEffect(() => {
-        getProfile()
+        if (session) {
+            getProfile()
+        }
     }, [])
 
     const getProfile = async () => {
