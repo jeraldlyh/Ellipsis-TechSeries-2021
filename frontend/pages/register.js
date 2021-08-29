@@ -30,11 +30,11 @@ export default function Register() {
       <NavBar />
 
       <div className="pt-6 pb-20 h-full overflow-hidden w-full flex items-center justify-center bg-gray-100">
-        <div className="mx-32 w-full rounded-lg shadow-md text-center bg-white justify-center items-center py-20 px-28 flex flex-row">
-          <img src="/auth/register.png" style={{ height: 343 }} className="flex-none mr-10" />
+        <div className="mx-72 w-full rounded-3xl shadow-md text-center bg-white justify-center items-center py-10 px-8 flex flex-row">
+          <img src="/auth/register.png" style={{ height: 343 }} className="flex-none mr-2" />
           <div className="items-start flex flex-col w-full">
             <div className="text-red-700 font-semibold text-2xl tracking-wider mb-1">
-              REGISTER
+              Register
             </div>
             <div
               style={{ fontSize: 13 }}
@@ -43,56 +43,55 @@ export default function Register() {
               Start your BNPL journey now!
             </div>
             <input
-              className="mb-2 px-5 border w-full"
-              style={{ height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
+            className="h-8 w-80 border rounded-md mb-5 focus:outline-none px-3 text-xs"
+            style={{ backgroundColor: "#F7F7F7"}}
               placeholder="UEN"
               value={UEN}
               onChange={e => setUEN(e.target.value)}
             />
             <input
-              className="mb-2 px-5 border w-full"
-              style={{ height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
+              className="h-8 w-80 border rounded-md mb-5 focus:outline-none px-3 text-xs"
+              style={{ backgroundColor: "#F7F7F7"}}
               placeholder="Name"
               value={name}
               onChange={e => setName(e.target.value)}
             />
             <input
-              className="mb-2 px-5 border w-full"
-              style={{ height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
+              className="h-8 w-80 border rounded-md mb-5 focus:outline-none px-3 text-xs"
+              style={{ backgroundColor: "#F7F7F7"}}
               placeholder="Address"
               value={address}
               onChange={e => setAddress(e.target.value)}
             />
             <input
-              className="mb-2 px-5 border w-full"
-              style={{ height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
+              className="h-8 w-80 border rounded-md mb-5 focus:outline-none px-3 text-xs"
+              style={{ backgroundColor: "#F7F7F7"}}
               placeholder="Email"
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
             <input
-              className="mb-8 px-5 border w-full"
-              style={{ height: 40, borderRadius: 10, backgroundColor: '#F7F7F7', borderColor: '#B6B6B6' }}
+              className="h-8 w-80 border rounded-md mb-5 focus:outline-none px-3 text-xs"
+              style={{ backgroundColor: "#F7F7F7"}}
               placeholder="Password"
               type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
-            <div className="w-full flex flex-col self-center">
+            <div className="w-80 flex flex-col self-start">
               <div
                 style={{
                   borderWidth: 1,
                   borderRadius: 10,
                   color: 'white',
-                  height: 40
                 }}
-                className="w-full items-center flex justify-center bg-red-600 hover:bg-red-700 cursor-pointer"
+                className="h-9 w-80 items-center flex justify-center bg-red-600 hover:bg-red-700 cursor-pointer text-sm"
                 onClick={registerAccount}
               >
                 Sign up
               </div>
-              <div className="mt-5 text-gray-600 text-xs cursor-pointer hover:text-black" onClick={() => router.push("/login")}>
+              <div className="mt-5 h-9 w-80 items-center flex justify-center rounded-md text-gray-600 text-xs cursor-pointer hover:text-black" style={{ backgroundColor: "#F7F7F7"}} onClick={() => router.push("/login")}>
                 Have an account? Login here!
               </div>
             </div>
