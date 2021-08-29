@@ -19,16 +19,16 @@ export default function Home() {
               BNPL
             </div>
             <div className="border-b-8 border-red-700" />
-            <div className="py-3 px-5 mt-12 tracking-wider bg-black rounded-md text-white text-center text-base cursor-pointer hover:bg-gray-700" onClick={() => router.push("/register")}>Register now</div>
+            <div className="font-normal text-lg py-3 px-5 mt-12 tracking-wider bg-black rounded-md text-white text-center text-base cursor-pointer hover:bg-gray-700" onClick={() => router.push("/register")}>Register now</div>
           </div>
           <img src="/landing/building.png" className="pt-10 pb-24 h-screen" />
         </div>
         <div className="flex justify-center">
-          <div className="text-center italic w-1/2">
+          <div className="font-light text-center italic w-1/2">
             We help <span className="text-red-700">small businesses</span> access <span className="text-red-700">Buy Now Pay Later (BNPL)</span> schemes with the aim of <span className="text-red-700">financial inclusion</span> in mind
           </div>
         </div>
-        <div className="mt-8 mb-32 text-red-700 font-light text-center text-xxs">
+        <div className="mt-8 mb-32 text-red-700 font-light text-center text-xs">
           - CHEQUEMATE
         </div>
 
