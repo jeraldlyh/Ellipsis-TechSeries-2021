@@ -7,7 +7,6 @@ const { uuid } = require("uuidv4")
 module.exports = {
     createProduct: async function (req, res) {
         const { name, description, quantity, image, instalment, price, companyID } = req.body
-        console.log(req.body)
         await Models.Product.create({
             name: name,
             description: description,
@@ -37,12 +36,14 @@ module.exports = {
         }
         S3Bucket.upload(params, function (error, data) {
             if (error) {
+                console.log(error)
                 return res.status(400).send(error.code)
             }
             console.log(data, data.Location)
             return res.status(201).json({ imageURL: data.Location })
         })
     },
+    
     getProduct: async function (req, res) {
         const products = await Models.Product.findAll({
             where: {
@@ -70,5 +71,24 @@ module.exports = {
             }
         })
         return res.status(200).json({ product: product })
+    },
+    updateProductByID: async function (req, res) {
+        const { productID } = req.params
+        const { name, description, quantity, image, instalment, price, companyID } = req.body
+
+        const product = await Models.Product.findOne({
+            where: {
+                id: productID
+            }
+        })
+        await product.update({
+            name: name,
+            description: description,
+            quantity: quantity,
+            image: image,
+            instalment: instalment,
+            price: price,
+        })
+        return res.sendStatus(200)
     }
 }

@@ -30,13 +30,12 @@ export default function Upload() {
             }
 
             const response = await axiosInstance.post("api/product/image", file)
-            console.log(response.data)
             const product = {
                 name: name,
                 description: description,
                 instalment: instalment,
                 quantity: quantity,
-                price: parseInt(price.replace("$", "")),
+                price: parseInt(price.replace("$", "").replace(",", "")),
                 image: response.data.imageURL,
                 companyID: session.uen,
             }

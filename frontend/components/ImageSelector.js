@@ -50,7 +50,7 @@ function ImageSelector({ images, setImages, onChange }) {
                         {
                             imageList && imageList.length === 0
                                 ? <button
-                                    className="w-24 h-24 rounded border-2 items-center justify-center flex"
+                                    className="w-24 h-24 rounded items-center justify-center flex"
                                     style={isDragging ? { color: "red" } : undefined}
                                     onClick={onImageUpload}
                                     {...dragProps}
@@ -61,8 +61,8 @@ function ImageSelector({ images, setImages, onChange }) {
                         }
                         {
                             imageList.map((image, index) => (
-                                <div key={index} className="flex flex-col items-center border rounded p-3">
-                                    <Image className="flex object-contain" src={image["data_url"]} alt="" width="100%" height="100%" layout="fixed" />
+                                <div key={index} className="flex flex-col items-center p-3">
+                                    <img className="flex" src={image["data_url"] ? image["data_url"] : image} alt="" width="100%" height="100%" layout="fixed" />
                                     <div className="flex w-full mt-3 justify-around">
                                         <div className="text-xs cursor-pointer" onClick={() => onImageUpdate(index)}>Update</div>
                                         <div className="text-xs cursor-pointer text-red-700" onClick={() => onImageRemove(index)}>Remove</div>
