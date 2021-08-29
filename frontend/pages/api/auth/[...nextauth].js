@@ -37,6 +37,9 @@ const settings = {
             return session
         },
         async redirect(url, baseUrl) {
+            if (url !== baseUrl) {
+                return url
+            }
             return baseUrl
         },
         async jwt(token, user, account, profile, isNewUser) {
