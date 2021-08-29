@@ -25,7 +25,7 @@ const Listing = () => {
             <Navbar />
             <div className="pt-10"></div>
             <div className={styles.header1container}>
-                <div className="text-red-700 font-semibold text-6xl text-center w-full tracking-widest pb-1 ">
+                <div className="text-red-700 font-semibold text-5xl text-center w-full tracking-widest pb-1 ">
                     MY LISTINGS
                 </div>
                 <div className="italic text-grey-700 text-sm text-center w-full tracking-wide pt-2">

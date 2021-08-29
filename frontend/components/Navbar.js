@@ -37,13 +37,16 @@ export default function Navbar() {
                 {
                     session
                         ?
-                        <div className="w-80 flex justify-between items-center">
+                        <div className="w-96 flex justify-between items-center">
                             <div className="tracking-wider text-sm cursor-pointer flex items-center" onClick={() => router.push("/profile")}>
                                 <img src="/profile/profile.png" className="w-6 h-6 rounded-full mr-3" />
                                 {_.upperFirst(profile.name)}
                             </div>
                             <div className="tracking-wider text-sm cursor-pointer flex items-center" onClick={() => router.push("/listings")}>
                                 My Listings
+                            </div>
+                            <div className="tracking-wider text-sm cursor-pointer flex items-center" onClick={() => router.push("/cart")}>
+                                My Cart
                             </div>
                             <div className="py-2 px-6 tracking-wider bg-black rounded-md text-white text-sm cursor-pointer hover:bg-gray-700" onClick={logout}>Logout</div>
                         </div>

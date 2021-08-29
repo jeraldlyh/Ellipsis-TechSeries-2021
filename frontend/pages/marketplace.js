@@ -49,7 +49,7 @@ const marketplace = () => {
       <Navbar />
       <div className="pt-10 min-h-screen">
         <div className={styles.header1container}>
-          <div className="text-red-700 font-semibold text-6xl text-center w-full tracking-widest pb-1 ">
+          <div className="text-red-700 font-semibold text-5xl text-center w-full tracking-widest pb-1 ">
             MARKETPLACE
           </div>
           <div className="italic mt-2 text-grey-700 text-sm text-center w-full tracking-wide">
