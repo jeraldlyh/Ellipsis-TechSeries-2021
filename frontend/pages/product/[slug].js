@@ -62,7 +62,7 @@ const Product = () => {
                                 BNPL SCHEME:
                             </span>
                             <span style={{ color: "#D02626", fontSize: 12 }}>
-                                {product.instalment} MONTHLY PAYMENT ACROSS 12 MONTHS
+                                MONTHLY PAYMENT ACROSS {product.instalment} MONTHS
                             </span>
                         </div>
                         <div className={styles.detail}>{product.description}</div>

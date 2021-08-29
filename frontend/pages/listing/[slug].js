@@ -35,7 +35,7 @@ const Listing = () => {
               BNPL SCHEME:
             </span>
             <span style={{ color: "#D02626", fontSize: 12 }}>
-              {bnpl} MONTHLY PAYMENT ACROSS 12 MONTHS
+              MONTHLY PAYMENT ACROSS {bnpl} MONTHS
             </span>
           </div>
           <div className={styles.detail}>{desc}</div>

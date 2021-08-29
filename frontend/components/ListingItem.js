@@ -26,7 +26,7 @@ export default function ListingItem(props) {
       <div className="flex flex-col items-center px-20" onClick={() => { router.push({ pathname: "/listing/" + `${props.id}`, query: { name: props.name, company: props.company, price: props.price, image: props.image, desc: props.desc, bnpl: props.bnpl } }) }}>
         <div className={styles.productName}>{props.name}</div>
         <div className={styles.companyName}>{props.company}</div>
-        <NumberFormat className={styles.price} value={props.price} displayType={"text"} thousandSeparator={true} prefix={"$"} />
+        <NumberFormat className={styles.price} value={props.price} displayType={"text"} thousandSeparator={true} prefix={"S$ "} />
         <div className={styles.bnpl2}>BNPL Scheme offered:</div>
         <div className={styles.bnpl}>Monthly payment across {props.bnpl} months</div>
       </div>

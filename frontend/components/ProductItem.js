@@ -14,7 +14,7 @@ export default function ProductItem(props) {
             <img className="pb-5 object-contain" src={props.image} width="240" height="330" />
             <div className={styles.productName}>{props.name}</div>
             <div className={styles.companyName}>{props.company}</div>
-            <NumberFormat value={props.price} displayType={"text"} thousandSeparator={true} prefix={"S$ "} />
+            <NumberFormat className={styles.price} value={props.price} displayType={"text"} thousandSeparator={true} prefix={"S$ "} />
         </div>
     )
 }
