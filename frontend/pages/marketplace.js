@@ -73,8 +73,7 @@ const marketplace = () => {
         <div className="grid gap-y-16 grid-cols-4 justify-items-center p-0.5 pl-20 pr-20 pb-30">
           {
             products && products.length !== 0
-              ? 
-
+              ?
               _.filter(products, (product) => {
                 return _.includes(product.name, search)
               }).map(product => {
@@ -93,6 +92,14 @@ const marketplace = () => {
                 <ProductItem id={7} image="/photos/marketplace/bottle.jpeg" name="Memobottle" company="Bottles and bottles" price="$ 20" desc="This is a good bottle, in fact the best bottle" />
                 <ProductItem id={8} image="/photos/marketplace/flask.jpeg" name="Vase" company="Plotting pots" price="S$ 15" desc="Sturdy and high quality housing of indoor or outdoor plant decors" /> */}
         </div>
+        {
+          _.filter(products, (product) => {
+            return _.includes(product.name, search)
+          }).length === 0 &&
+          <div className="flex justify-center">
+            <img src="/marketplace/search.webp" />
+          </div>
+        }
         {
           products && products.length === 0 &&
           <div className="flex flex-col justify-center items-center">
