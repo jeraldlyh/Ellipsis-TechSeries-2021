@@ -17,6 +17,7 @@
         "jsonwebtoken": "^8.5.1",
         "lodash": "^4.17.21",
         "mysql2": "^2.3.0",
+        "node-fetch": "^2.6.1",
         "node-ses": "^3.0.3",
         "nodemon": "^2.0.12",
         "sequelize": "^6.6.5",

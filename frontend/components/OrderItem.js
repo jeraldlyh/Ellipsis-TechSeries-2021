@@ -1,4 +1,5 @@
 import React from 'react'
+import axiosInstance from '../axios/axiosInstance'
 
 const OrderItem = (props) => {
   return (
@@ -10,7 +11,9 @@ const OrderItem = (props) => {
       <div className="col-span-2">{props.company}</div>
       <div className="col-span-2">{props.quantity}</div>
       <div className="col-span-2 flex items-center">
-        <div className="rounded-full bg-black hover:bg-gray-700 text-white text-xs flex items-center px-2 py-1 cursor-pointer mr-2">ACCEPT</div>
+        <div className="rounded-full bg-black hover:bg-gray-700 text-white text-xs flex items-center px-2 py-1 cursor-pointer mr-2" onClick={() => {
+            axiosInstance.get("/telegram")
+        }}>ACCEPT</div>
         <div className="rounded-full border text-xs flex items-center px-2 py-1 cursor-pointer mr-2">REJECT</div>
       </div>
     </div>

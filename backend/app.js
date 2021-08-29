@@ -1,5 +1,6 @@
 require("dotenv").config()
 const express = require("express")
+const fetch = require("node-fetch")
 const cors = require("cors")
 const companyRoutes = require("./routes/company")
 const authRoutes = require("./routes/auth")
@@ -24,6 +25,15 @@ app.use("/api/telegram", telegramRoutes)
 app.get("/", (req, res) => {
     res.json({ message: "ok" })
 })
-
+app.get("/telegram", async (req, res) => {
+    console.log("here")
+    const botID = "1921909531:AAGLurVfcrqMKzgk2DEzSE2SkYyFpYYKEo0"
+    const chatID = 73874853
+    const text = "YOOO"
+    const url = "https://api.telegram.org/bot" + botID + "/sendmessage?chat_id=" + chatID + "&parse_mode=Markdown&text=" + text;
+    console.log(url)
+    fetch(url).then(res => console.log(res)).catch(err => console.log(errr))
+    return res.sendStatus(200)
+})
 const port = process.env.PORT || 8000
 app.listen(port, () => console.log("Server is running"))

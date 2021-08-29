@@ -43,7 +43,7 @@ module.exports = {
             return res.status(201).json({ imageURL: data.Location })
         })
     },
-    
+
     getProduct: async function (req, res) {
         const products = await Models.Product.findAll({
             where: {
@@ -89,14 +89,15 @@ module.exports = {
             instalment: instalment,
             price: price,
         })
-        return res.sendStatus(200)},
-        
-    sendTeleNotif: async function (req, res){
+        return res.sendStatus(200)
+    },
+
+    sendTeleNotif: async function (req, res) {
         console.log("hello1")
         const chatID = 73874853
         const botID = "1921909531:AAGLurVfcrqMKzgk2DEzSE2SkYyFpYYKEo0"
         const text = "YOOO"
-        const url = "https://api.telegram.org/bot" + botID + "/sendmessage?chat_id=" + chatID + "&parse_mode=Markdown&text=" + text; 
+        const url = "https://api.telegram.org/bot" + botID + "/sendmessage?chat_id=" + chatID + "&parse_mode=Markdown&text=" + text;
         console.log(url)
         await fetch(url);
         return res.status(200)

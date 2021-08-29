@@ -18,11 +18,6 @@ export default function Home() {
             <div className="text-black mb-3">
               CHEQUEMATE
             </div>
-            <div className="text-black text-lg cursor-pointer" onClick={() => {
-                axiosInstance.get("/api/telegram")
-            }}>
-    test
-            </div>
             <div className="text-red-700 mb-2">
               BNPL
             </div>
