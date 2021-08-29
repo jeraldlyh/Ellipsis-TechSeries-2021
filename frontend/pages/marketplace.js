@@ -96,8 +96,9 @@ const marketplace = () => {
           _.filter(products, (product) => {
             return _.includes(product.name, search)
           }).length === 0 &&
-          <div className="flex justify-center">
-            <img src="/marketplace/search.webp" />
+          <div className="flex flex-col justify-center items-center">
+            <img src="/marketplace/empty.png" className="h-40 opacity-80" />
+            <div className="-ml-14 mt-10 flex justify-center items-center">No search matches. Try a different keyword!</div>
           </div>
         }
         {
