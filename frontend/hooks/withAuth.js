@@ -5,32 +5,33 @@ import { useAuth } from "./useAuth"
 import _ from "lodash"
 import { signOut } from "next-auth/client"
 
-
-const PERMITTED_URLS = ["/login", "/register"]
+const PERMITTED_URLS = ["/", "/login", "/register", "/marketplace", "/product"]
 
 export const withAuth = () => {
-    return function (Component) {
-        return function (props) {
-            const { session, loading } = useAuth()
-            console.log("Loading: ", loading, "Session: ", session)
+  return function (Component) {
+    return function (props) {
+      const { session, loading } = useAuth()
+      console.log("Loading: ", loading, "Session: ", session)
 
-            if (!loading && session && session.error) {             // Handle expired tokens
-                signOut()
-                return <Error message="Something bad happened..." errorCode={404} action={() => router.push("/login")}/>
-            }
+      if (!loading && session && session.error) {             // Handle expired tokens
+        signOut()
+        return <Error message="Something bad happened..." errorCode={404} action={() => router.push("/login")} />
+      }
 
-            const router = useRouter()
-            const isPermitted = _.includes(PERMITTED_URLS, router.pathname)
+      const router = useRouter()
+      const isPermitted = _.filter(PERMITTED_URLS, router.pathname, function (path) {
+        return _.includes(router.pathname, path)
+      })
 
-            if (!loading && !session && !(isPermitted)) {
-                return <Error message="You are not authorized here." errorCode={401} action={() => router.push("/login")} />
-            }
+      if (!loading && !session && !(isPermitted)) {
+        return <Error message="You are not authorized here." errorCode={401} action={() => router.push("/login")} />
+      }
 
-            if (typeof window !== undefined && loading) {
-                return <div className="flex justify-center items-center">LOADING IN HOC</div>
-            }
+      if (typeof window !== undefined && loading) {
+        return <div className="flex justify-center items-center">LOADING IN HOC</div>
+      }
 
-            return <Component session={session} {...props} />
-        }
+      return <Component session={session} {...props} />
     }
+  }
 }

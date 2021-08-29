@@ -1,12 +1,13 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { useRouter } from "next/router"
+import styles from '../styles/marketplace.module.css'
 
 export default function Home() {
   const router = useRouter()
 
   return (
-    <div className="overflow-x-hidden">
+    <div className={[styles.background, "overflow-x-hidden"]}>
       <Navbar />
       <div className="bg-gray-100 w-screen justify-center">
         <div className="justify-between flex tracking-widest font-semibold text-7xl w-screen h-screen px-28">
