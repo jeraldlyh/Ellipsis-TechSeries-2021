@@ -5,6 +5,7 @@ import { GiMagnifyingGlass } from "react-icons/gi"
 import SortDropdown from '../components/SortDropdown'
 import ProductItem from '../components/ProductItem'
 import axiosInstance from "../axios/axiosInstance"
+import _ from 'lodash'
 
 
 const marketplace = () => {
@@ -72,7 +73,11 @@ const marketplace = () => {
         <div className="grid gap-y-16 grid-cols-4 justify-items-center p-0.5 pl-20 pr-20 pb-30">
           {
             products && products.length !== 0
-              ? products.map(product => {
+              ? 
+
+              _.filter(products, (product) => {
+                return _.includes(product.name, search)
+              }).map(product => {
                 return <ProductItem key={product.id} id={product.id} name={product.name} image={product.image} company="123" price={product.price} />
               })
               : <></>
