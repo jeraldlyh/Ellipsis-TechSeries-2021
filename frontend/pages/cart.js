@@ -32,8 +32,8 @@ export default function Home() {
           </div>
         </div>
         <Divider />
-        <CartItem image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price={10} />
-        <CartItem image="/photos/marketplace/chair.jpeg" name="Chair" company="Daily Slip" price={17} />
+        <CartItem image="/photos/marketplace/cups.jpeg" name="Ceramic Cups" company="Cupping" price={10} />
+        <CartItem image="/photos/marketplace/chair.jpeg" name="Modern Office Chair" company="ChairMan" price={250} />
 
         {/* Payment Plans */}
         <div className="bg-white w-full mt-10 mb-12 px-20 py-10 justify-between flex-row flex rounded-3xl shadow-md">
