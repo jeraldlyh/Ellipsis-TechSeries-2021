@@ -48,9 +48,9 @@ const Listing = () => {
                         })
                         : null
                 }
-                <ListingItem id={1} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45" desc="Everyday Bag to serve your everyday needs, now comes very nicely in new colour." bnpl="Monthly payment across 12 months" />
-                <ListingItem id={2} image="/photos/marketplace/handbag.jpeg" name="Estla hand bag" company="BigBagCompany" price="S$ 30" desc="An extremely functional bag to cater to all your needs. It is spacious enough for all your daily necessity, all while remaining fashionable." bnpl="Monthly payment across 12 months" />
-                <ListingItem id={3} image="/photos/marketplace/totebag.jpeg" name="Cowhide hand bag" company="ECCOwide" price="S$ 45" desc="For seekers of special textures, our unique cowhide hand bags for offer a different experience" bnpl="Monthly payment across 6 months" />
+                <ListingItem id={1} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45" desc="Everyday Bag to serve your everyday needs, now comes very nicely in new colour." bnpl="12" />
+                <ListingItem id={2} image="/photos/marketplace/handbag.jpeg" name="Estla hand bag" company="BigBagCompany" price="S$ 30" desc="An extremely functional bag to cater to all your needs. It is spacious enough for all your daily necessity, all while remaining fashionable." bnpl="12" />
+                <ListingItem id={3} image="/photos/marketplace/totebag.jpeg" name="Cowhide hand bag" company="ECCOwide" price="S$ 45" desc="For seekers of special textures, our unique cowhide hand bags for offer a different experience" bnpl="6" />
             </div>
             <div className="pt-32"></div>
         </div>

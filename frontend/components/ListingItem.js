@@ -28,7 +28,7 @@ export default function ListingItem(props) {
         <div className={styles.companyName}>{props.company}</div>
         <NumberFormat className={styles.price} value={props.price} displayType={"text"} thousandSeparator={true} prefix={"$"} />
         <div className={styles.bnpl2}>BNPL Scheme offered:</div>
-        <div className={styles.bnpl}>{props.bnpl}</div>
+        <div className={styles.bnpl}>Monthly payment across {props.bnpl} months</div>
       </div>
     </div>
   )

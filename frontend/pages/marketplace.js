@@ -8,38 +8,39 @@ import axiosInstance from "../axios/axiosInstance"
 
 
 const marketplace = () => {
-    const [category, setCategory] = useState({
-        id: 1,
-        name: "Sort By..."
-    })
-    const [products, setProducts] = useState([])
+  const [category, setCategory] = useState({
+    id: 1,
+    name: "Sort By..."
+  })
+  const [products, setProducts] = useState([])
+  const [search, setSearch] = useState("")
 
-    useEffect(() => {
-        getProducts()
-    }, [])
+  useEffect(() => {
+    getProducts()
+  }, [])
 
-    const getProducts = async () => {
-        const response = await axiosInstance.get("/api/product")
-        setProducts(response.data.products)
+  const getProducts = async () => {
+    const response = await axiosInstance.get("/api/product")
+    setProducts(response.data.products)
+  }
+  const data = [
+    {
+      id: 1,
+      name: "Price"
+    },
+    {
+      id: 2,
+      name: "Name"
+    },
+    {
+      id: 3,
+      name: "Date Added"
+    },
+    {
+      id: 4,
+      name: "Sales"
     }
-    const data = [
-        {
-            id: 1,
-            name: "Price"
-        },
-        {
-            id: 2,
-            name: "Name"
-        },
-        {
-            id: 3,
-            name: "Date Added"
-        },
-        {
-            id: 4,
-            name: "Sales"
-        }
-    ]
+  ]
 
   return (
     <div className={styles.background}>
@@ -57,7 +58,7 @@ const marketplace = () => {
           <div className="pl-1">
             <GiMagnifyingGlass />
           </div>
-          <input className="w-full focus:outline-none" placeholder="Find what you are looking for..." />
+          <input className="w-full focus:outline-none" placeholder="Find what you are looking for..." value={search} onChange={event => setSearch(event.target.value)} />
         </div>
 
         <div className="flex justify-between pb-7 pt-8 pl-32 pr-32">
@@ -78,7 +79,7 @@ const marketplace = () => {
           }
           {/* <ProductItem id={1} image="/photos/marketplace/flour.jpeg" name="Premium Flour" company="PonHockSG" price="S$ 10"
                     desc="At PonHockSG, we provide the best flour you can find in Singapore, in terms of product quality, rice texture and product sustainability."
-                    bnpl="Monthly payment across 12 months" />
+                    bnpl="12" />
                 <ProductItem id={2} image="/photos/marketplace/cups.jpeg" name="Ceramic Cups" company="Cupping" price="S$ 10" desc="Simple and minimalistic cup with a modern design. Whether dressing your table up or down, the simple, functional design is easy to coordinate with other shapes and colours." />
                 <ProductItem id={3} image="/photos/marketplace/chair.jpeg" name="Modern Office Chair" company="ChairMan" price="S$ 250" desc="At ChairMan, we believe that there is a perfect chair for everyone. This classic black chair is suitable for offices, homes and even cafes." />
                 <ProductItem id={4} image="/photos/marketplace/backpack.jpeg" name="Everyday Bag" company="BigBagCompany" price="S$ 45" desc="Everyday Bag to serve your everyday needs, now comes very nicely in new colour." />
