@@ -8,7 +8,7 @@ module.exports = {
         'xxs': '.3rem'
       },
       fontFamily: {
-        serif: ["Alatsi"]
+        'sans': ["Alatsi"]
       }
     }
   },
