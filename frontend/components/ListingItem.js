@@ -9,8 +9,8 @@ import NumberFormat from 'react-number-format'
 export default function ListingItem(props) {
   const router = useRouter();
   const [isCardView, setIsCardView] = useState(true)
-  const visible = "cursor-pointer"
-  const hidden = "cursor-pointer opacity-30"
+  const visible = "cursor-pointer flex flex-col items-center"
+  const hidden = "cursor-pointer opacity-30 flex flex-col items-center"
 
   return (
     <div className={isCardView ? visible : hidden}>
@@ -23,12 +23,12 @@ export default function ListingItem(props) {
         </IconButton>
 
       </div>
-      <div onClick={() => { router.push({ pathname: "/listing/" + `${props.id}`, query: { name: props.name, company: props.company, price: props.price, image: props.image, desc: props.desc, bnpl: props.bnpl } }) }}>
+      <div className="flex flex-col items-center px-20" onClick={() => { router.push({ pathname: "/listing/" + `${props.id}`, query: { name: props.name, company: props.company, price: props.price, image: props.image, desc: props.desc, bnpl: props.bnpl } }) }}>
         <div className={styles.productName}>{props.name}</div>
         <div className={styles.companyName}>{props.company}</div>
         <NumberFormat className={styles.price} value={props.price} displayType={"text"} thousandSeparator={true} prefix={"$"} />
         <div className={styles.bnpl2}>BNPL Scheme offered:</div>
-        <div className={styles.bnpl}>Monthly payment across {props.bnpl} months</div>
+        <div className={styles.bnpl}>{props.bnpl}</div>
       </div>
     </div>
   )
