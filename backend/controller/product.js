@@ -46,6 +46,10 @@ module.exports = {
         const products = await Models.Product.findAll({
             where: {
                 isHidden: false
+            },
+            include: {
+                model: Models.Company,
+                attributes: ["name"]
             }
         })
 

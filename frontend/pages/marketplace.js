@@ -23,6 +23,7 @@ const marketplace = () => {
   const getProducts = async () => {
     const response = await axiosInstance.get("/api/product")
     setProducts(response.data.products)
+    console.log(response.data.products)
   }
   const data = [
     {
@@ -77,7 +78,7 @@ const marketplace = () => {
               _.filter(products, (product) => {
                 return _.includes(product.name, search)
               }).map(product => {
-                return <ProductItem key={product.id} id={product.id} name={product.name} image={product.image} company="123" price={product.price} />
+                return <ProductItem key={product.id} id={product.id} name={product.name} image={product.image} company={product.Company.name} price={product.price} />
               })
               : <></>
           }
