@@ -12,16 +12,16 @@ const marketplace = () => {
         id: 1,
         name: "Sort By..."
     })
-
     const [products, setProducts] = useState([])
-    const getProducts = async () => {
-        const response = await axiosInstance.get("/api/product")
-        setProducts(response.data.products)
-    }
 
     useEffect(() => {
         getProducts()
     }, [])
+
+    const getProducts = async () => {
+        const response = await axiosInstance.get("/api/product")
+        setProducts(response.data.products)
+    }
     const data = [
         {
             id: 1,

@@ -1,5 +1,4 @@
 const Models = require("../models")
-const _ = require("lodash")
 
 
 module.exports = {
@@ -19,19 +18,26 @@ module.exports = {
         return res.sendStatus(200)
 
     },
-    getProductByID: async function (req, res) {
-        const products = await Models.Product.findAll({
+    getCompanyByID: async function (req, res) {
+        const { companyID } = req.params
+        const company = await Models.Company.findOne({
             where: {
-                companyID: req.params.companyID,
-            },
-            include: {
-                model: Models.Company,
-                attributes: ["name"]
+                uen: companyID
             }
         })
-        const result = _.map(products, function (p) {
-            return p.toJSON()
+        return res.status(200).json({ company: company.toJSON() })
+    },
+    getOrderReq: async function (req, res) {
+        const { companyID } = req.params
+        const orders = await Models.Order.findAll({
+            include: [{
+                model: Models.Cart,
+                where: {
+                    companyID: companyID
+                }
+            }]
         })
-        return res.status(200).json({ products: result })
+        console.log(orders)
+        return res.sendStatus(200)
     }
 }
