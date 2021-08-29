@@ -91,7 +91,7 @@ export default function Register() {
               >
                 Sign up
               </div>
-              <div className="mt-5 h-9 w-80 items-center flex justify-center rounded-md text-gray-600 text-xs cursor-pointer hover:text-black" style={{ backgroundColor: "#F7F7F7"}} onClick={() => router.push("/login")}>
+              <div className="mt-5 h-9 w-80 items-center flex justify-center rounded-md text-gray-600 text-xs cursor-pointer bg-gray-100 hover:bg-gray-200" onClick={() => router.push("/login")}>
                 Have an account? Login here!
               </div>
             </div>

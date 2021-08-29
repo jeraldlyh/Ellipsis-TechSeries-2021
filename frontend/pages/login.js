@@ -53,13 +53,12 @@ export default function Login() {
                         />
                         <div>
                             <div
-                                className="h-9 w-64 border rounded-md mb-5 focus:outline-none px-3 text-xs text-white items-center flex justify-center"
-                                style={{ backgroundColor: "#D02626"}}
+                                className="cursor-pointer bg-red-600 hover:bg-red-700 h-9 w-64 border rounded-md mb-5 focus:outline-none px-3 text-xs text-white items-center flex justify-center"
                                 onClick={loginUser}
                             >
                                 Sign in
                             </div>
-                            <div className="mt-5 h-9 w-64 items-center flex justify-center rounded-md text-gray-600 text-xs cursor-pointer hover:text-black" style={{ backgroundColor: "#F7F7F7"}} onClick={() => router.push("/register")}>
+                            <div className="mt-5 h-9 w-64 items-center flex justify-center rounded-md text-gray-600 text-xs cursor-pointer bg-gray-100 hover:bg-gray-200" onClick={() => router.push("/register")}>
                                 No account yet? Sign up here!
                             </div>
 

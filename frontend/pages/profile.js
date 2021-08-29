@@ -42,7 +42,7 @@ const Profile = () => {
                 <div className="col-span-2">QUANTITY</div>
                 <div className="col-span-2"></div>
               </div>
-              <div className="h-60 overflow-x-hidden overflow-y-scroll">
+              <div className="h-60 overflow-x-hidden overflow-y-scroll scrollbar-hide">
                 <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
                 <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
                 <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
@@ -54,15 +54,15 @@ const Profile = () => {
             </div>
             <div className="bg-white rounded-3xl shadow-md w-full h-96 mb-16 px-12 py-6">
               <div className="text-red-700 text-lg font-semibold tracking-wider border-b-2 pb-4">OUTSTANDING BILLS</div>
-              <div className="h-72 overflow-x-hidden overflow-y-scroll">
-              <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={5} total={13} />
-              <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={6} total={13} />
-              <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={7} total={9} />
-              <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={2} total={13} />
-              <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={3} total={11} />
-              <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={2} total={3} />
-              <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={5} total={10} />
-            </div>
+              <div className="h-72 overflow-x-hidden overflow-y-scroll scrollbar-hide">
+                <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={5} total={13} />
+                <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={6} total={13} />
+                <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={7} total={9} />
+                <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={2} total={13} />
+                <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={3} total={11} />
+                <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={2} total={3} />
+                <BillItem image="/profile/item1.png" name="Premium Flour" company="PonHockSG" current={5} total={10} />
+              </div>
             </div>
           </div>
         </div>
