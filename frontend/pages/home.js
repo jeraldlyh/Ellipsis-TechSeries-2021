@@ -22,7 +22,8 @@ export default function Home() {
             </div>
             <div className="border-b-8 border-red-700" />
             {
-                session ? null : <div className="font-normal text-lg py-3 px-5 mt-12 tracking-wider bg-black rounded-md text-white text-center text-base cursor-pointer hover:bg-gray-700" onClick={() => router.push("/register")}>Register now</div>
+                session ? <div className="font-normal text-lg py-3 px-5 mt-12 tracking-wider bg-black rounded-md text-white text-center text-base cursor-pointer hover:bg-gray-700" onClick={() => router.push("/marketplace")}>Start browsing</div> : 
+                <div className="font-normal text-lg py-3 px-5 mt-12 tracking-wider bg-black rounded-md text-white text-center text-base cursor-pointer hover:bg-gray-700" onClick={() => router.push("/register")}>Register now</div>
             }
           </div>
           <img src="/landing/building.png" className="pt-10 pb-24 h-screen" />
