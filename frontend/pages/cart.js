@@ -32,8 +32,8 @@ export default function Home() {
           </div>
         </div>
         <Divider />
-        <CartItem />
-        <CartItem />
+        <CartItem name="Premium Flour" company="PonHockSG" price={10} />
+        <CartItem name="Premium Flour" company="PonHockSG" price={10} />
 
         {/* Payment Plans */}
         <div className="bg-white w-full mt-10 mb-12 px-20 py-10 justify-between flex-row flex rounded-3xl shadow-md">
