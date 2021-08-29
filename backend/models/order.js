@@ -19,7 +19,12 @@ const Order = db.define(
                 key: "id",
                 deferrable: Deferrable.INITIALLY_IMMEDIATE,
             }
-        }
+        },
+        status: {
+            type: DataTypes.ENUM(["ACCEPTED", "NOT ACCEPTED"]),
+            allowNull: false,
+            defaultValue: "NOT ACCEPTED",
+        },
     },
     { timestamps: true }
 )

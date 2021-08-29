@@ -21,8 +21,8 @@ export const withAuth = () => {
             const isPermitted = _.filter(PERMITTED_URLS, function (path) {
                 return _.includes(router.pathname, path)
             })
-
-            if (!loading && !session && !(isPermitted)) {
+            console.log("here", isPermitted)
+            if (!loading && !session && isPermitted.length === 0) {
                 return <Error message="You are not authorized here." errorCode={401} action={() => router.push("/login")} />
             }
 
