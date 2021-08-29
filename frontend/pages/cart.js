@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="bg-gray-100 flex flex-col min-h-screen">
       <Navbar />
-      <div className="pt-12 pb-4 text-red-700 font-semibold tracking-wider text-4xl text-center justify-center">
+      <div className="pt-12 pb-4 text-red-700 font-semibold tracking-wider text-5xl text-center justify-center">
         MY CART
       </div>
 
