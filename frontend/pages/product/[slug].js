@@ -1,24 +1,25 @@
 import { useRouter } from "next/router"
 import React, { useState } from "react"
-import Navbar from "../../components/Navbar.js"
+import Navbar from "../../components/Navbar"
 import styles from "../../styles/marketplace.module.css"
 import { AiOutlineArrowLeft } from "react-icons/ai"
+import { useAuth } from "../../hooks/useAuth"
+
 
 const Product = () => {
     const router = useRouter()
     const { name, company, price, image, desc, bnpl } = router.query
     const [quantity, setQuantity] = useState(0)
+    const { session, loading } = useAuth()
 
     return (
         <div className={styles.background}>
             <Navbar />
             <div className="flex justify-center pt-28">
-                <div>
-                    <AiOutlineArrowLeft
-                        className="cursor-pointer w-6 h-6"
-                        onClick={() => router.back()}
-                    />
-                </div>
+                <AiOutlineArrowLeft
+                    className="cursor-pointer w-6 h-6"
+                    onClick={() => router.back()}
+                />
 
                 <img
                     class="ml-10 flex justify-end object-cover"
@@ -46,7 +47,7 @@ const Product = () => {
                             <span>Quantity: </span>
                         </div>
                         <div className=" ml-5 h-5 w-12 rounded border-2">
-                            <input className="flex w-full h-full text-center focus:outline-none" style={{ fontSize: 12 }} />
+                            <input disabled={!session} className="flex w-full h-full text-center focus:outline-none" style={{ fontSize: 12 }} value={quantity} onChange={e => setQuantity(e.target.value)} />
                         </div>
                     </div>
 

@@ -6,7 +6,7 @@ const { uuid } = require("uuidv4")
 
 module.exports = {
     createProduct: async function (req, res) {
-        const { name, description, quantity, image, instalment, price } = req.body
+        const { name, description, quantity, image, instalment, price, companyID } = req.body
         await Models.Product.create({
             name: name,
             description: description,
@@ -14,6 +14,7 @@ module.exports = {
             image: image,
             instalment: instalment,
             price: price,
+            companyID, companyID
         })
         return res.sendStatus(200)
     },

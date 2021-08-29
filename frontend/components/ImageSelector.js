@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import Image from "next/image"
 import ImageUploading from "react-images-uploading"
-
+import { AiOutlinePlus } from "react-icons/ai"
 
 function ImageSelector({ images, setImages, onChange }) {
     const onError = () => {
@@ -17,9 +17,9 @@ function ImageSelector({ images, setImages, onChange }) {
             dataURLKey="data_url"
             onError={(error, files) => onError()}
             acceptType={["jpg", "png"]}
-            // resolutionHeight={480}
-            // resolutionWidth={640}
-            // resolutionType="less"
+        // resolutionHeight={480}
+        // resolutionWidth={640}
+        // resolutionType="less"
         >
             {({
                 imageList,
@@ -50,12 +50,12 @@ function ImageSelector({ images, setImages, onChange }) {
                         {
                             imageList && imageList.length === 0
                                 ? <button
-                                    className="border rounded"
+                                    className="w-24 h-24 rounded border-2 items-center justify-center flex"
                                     style={isDragging ? { color: "red" } : undefined}
                                     onClick={onImageUpload}
                                     {...dragProps}
                                 >
-                                    Click or Drop here
+                                    <AiOutlinePlus />
                                 </button>
                                 : null
                         }
@@ -64,8 +64,8 @@ function ImageSelector({ images, setImages, onChange }) {
                                 <div key={index} className="flex flex-col items-center border rounded p-3">
                                     <Image className="flex" src={image["data_url"]} alt="" width="100%" height="100%" layout="fixed" />
                                     <div className="flex w-full mt-3 justify-around">
-                                        <div onClick={() => onImageUpdate(index)}>Update</div>
-                                        <div onClick={() => onImageRemove(index)}>Remove</div>
+                                        <div className="text-xs" onClick={() => onImageUpdate(index)}>Update</div>
+                                        <div className="text-xs" onClick={() => onImageRemove(index)}>Remove</div>
                                     </div>
                                 </div>
                             ))
