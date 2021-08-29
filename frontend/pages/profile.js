@@ -28,7 +28,7 @@ const Profile = () => {
                 <div className="text-gray-600 text-base font-semibold tracking-wider">PHONE NO.</div>
                 <div className="text-gray-600 text-base font-semibold">+65 9987 6234</div>
               </div>
-              <div className="cursor-pointer hover:bg-gray-700 mt-20 flex justify-center py-2 rounded-2xl bg-gray-600 text-white">
+              <div className="cursor-pointer mt-20 flex justify-center py-2 rounded-lg bg-black hover:bg-gray-700 text-white">
                 VIEW MY LISTINGS
               </div>
             </div>
@@ -43,13 +43,13 @@ const Profile = () => {
                 <div className="col-span-2"></div>
               </div>
               <div className="h-60 overflow-x-hidden overflow-y-scroll">
-                <OrderItem />
-                <OrderItem />
-                <OrderItem />
-                <OrderItem />
-                <OrderItem />
-                <OrderItem />
-                <OrderItem />
+                <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
+                <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
+                <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
+                <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
+                <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
+                <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
+                <OrderItem image="/profile/item1.png" name="Arabica Coffee Beans" company="Daily Slip" quantity={10} />
               </div>
             </div>
             <div className="bg-white rounded-3xl shadow-md w-full h-96 mb-16 px-12 py-6">
