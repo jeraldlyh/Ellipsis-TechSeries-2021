@@ -11,6 +11,9 @@ const settings = {
         jwt: true,
         maxAge: 7 * 24 * 60 * 60,       // 7 days validity
     },
+    pages:{
+        error: "/404"
+    },
     providers: [
         Providers.Credentials({
             async authorize(credentials, request) {
